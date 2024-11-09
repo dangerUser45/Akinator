@@ -1,0 +1,22 @@
+digraph 
+{
+    rankdir = TB;
+
+    { /* шкала ранков*/
+        node[shape=plaintext]; /* что бы не было видно рамок */
+        edge[color=white] /* что бы не было видно стрелок */
+        "1" ->  "2"; 
+    }
+
+    node [ color = "#0d5a0e", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
+    edge [color = "blue", fontsize = 16, shape = "straight"];
+    null    [ shape = "Mrecord", label = " { data = %d\n addr: %p | { <left> L:\n addr: %d \n| <right> R: \n addr: %d \n} }" ];
+    first   [ shape = "Mrecord", label = " { data = %d\n addr: %p | { <left> L:\n addr: %d \n| <right> R: \n addr: %d \n} }" ];
+    second  [ shape = "Mrecord", label = " { data = %d\n addr: %p | { <left> L:\n addr: %d \n| <right> R: \n addr: %d \n} }" ];
+
+    null: <left> -> first;
+    null: <right> -> second;
+
+    { rank = same; "1"; "null" }
+    { rank = same; "2"; "first"; "second";}
+}

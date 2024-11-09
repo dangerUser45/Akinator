@@ -14,9 +14,8 @@ struct akinator
     el_t* root_node;
 };
 
-int  Create_file (const char* name_of_file);
+int  Create_file (const char* name_of_file, FILE* file);
 node_akntr* Create_node (el_t data);
-int Build_Graph ();
 void Dump_graph (node_akntr* node);
 void Dump_in_line (node_akntr* node);
 
