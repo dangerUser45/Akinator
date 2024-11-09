@@ -1,0 +1,532 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF77AE7E4A8 (64-bit), Flags: Cmdre0, Thread: 0x34F8 (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF77AD589A7 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF77AD1181E in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF77AD1152B in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:15:53
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF77AE7E4A8 (64-bit), Flags: Cmdre0, Thread: 0x34F8 (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF77AD589A7 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF77AD1181E in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF77AD1152B in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:15:53
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF71F96E4A8 (64-bit), Flags: Cmdre0, Thread: 0xD14 (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF71F848997 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF71F801812 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF71F80152B in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:16:28
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF71F96E4A8 (64-bit), Flags: Cmdre0, Thread: 0xD14 (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF71F848997 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF71F801812 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF71F80152B in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:16:28
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6D2EDE4A8 (64-bit), Flags: Cmdre0, Thread: 0x1804 (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF6D2DB8997 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF6D2D71812 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF6D2D7152B in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:19:00
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6D2EDE4A8 (64-bit), Flags: Cmdre0, Thread: 0x1804 (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF6D2DB8997 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF6D2D71812 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF6D2D7152B in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:19:00
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF629A8F4A8 (64-bit), Flags: Cmdre0, Thread: 0x41E0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF6299689D7 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF629921852 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF62992156B in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:20:21
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF629A8F4A8 (64-bit), Flags: Cmdre0, Thread: 0x41E0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF6299689D7 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF629921852 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF62992156B in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:20:21
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF78166F4A8 (64-bit), Flags: Cmdre0, Thread: 0x3294 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF7815489E7 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF781501861 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF78150157A in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:21:30
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF78166F4A8 (64-bit), Flags: Cmdre0, Thread: 0x3294 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF7815489E7 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF781501861 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF78150157A in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:21:30
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF75030F4A8 (64-bit), Flags: Cmdre0, Thread: 0xBC0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF7501E8A07 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF7501A186B in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF7501A157A in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:24:00
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF75030F4A8 (64-bit), Flags: Cmdre0, Thread: 0xBC0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF7501E8A07 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF7501A186B in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF7501A157A in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:24:01
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6C344F4A8 (64-bit), Flags: Cmdre0, Thread: 0xDCC (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF6C3328A47 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF6C32E18A9 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF6C32E157A in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:26:33
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE23B9FAAD в функции RtlEnterCriticalSection(). Попытка записать данные по адресу 0x0000000000000038 в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6C344F4A8 (64-bit), Flags: Cmdre0, Thread: 0xDCC (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23B9FAAD in C:\Windows\SYSTEM32\ntdll.dll: RtlEnterCriticalSection()
+# 2 0x00007FF6C3328A47 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 3 0x00007FF6C32E18A9 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 4 0x00007FF6C32E157A in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  8 2024 23:28:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 13:26:33
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
