@@ -32,7 +32,7 @@ int main ()
     node70 -> left = node65;
     node70 -> right = node80;
 
-    Insert(node50_root, 100);
+    //Insert(node50_root, 100);
 
     Dump_akin (node50_root);
 
