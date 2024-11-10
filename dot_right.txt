@@ -6,26 +6,10 @@ digraph
 
 	node_0000019ead6f8da0 [ shape = "Mrecord", label = "{ data = 50\n addr: 0000019ead6f8da0 | { L:\n addr: 0000019ead6f8de0 | R: \n addr: 0000019ead6f8f20 } }" ];
 
-	node_0000019ead6f8de0 [ shape = "Mrecord", label = "{ data = 30\n addr: 0000019ead6f8de0 | { L:\n addr: 0000019ead6f8e00 \n| R: \n addr: 0000000000000000 \n} }" ];
+	node_0000019ead6f8de0 [ shape = "Mrecord", label = "{ data = 30\n addr: 0000019ead6f8de0 | { L:\n addr: 0000019ead6f8e00 | R: \n addr: 0000000000000000 } }" ];
 	node_0000019ead6f8da0 -> node_0000019ead6f8de0;
 
-		node_0000019ead6f8f20  [ shape = "Mrecord", label = " { data = 70\n addr: 0000019ead6f8f20 | { L:\n addr: 0000019ead6f8e20 | R: \n addr: 0000019ead6f8f40 } }" ];
-		node_0000019ead6f8da0 -> node_0000019ead6f8f20;
+	node_0000019ead6f8f20 [ shape = "Mrecord", label = " { data = 70\n addr: 0000019ead6f8f20 | { L:\n addr: 0000019ead6f8e20 | R: \n addr: 0000019ead6f8f40 } }" ];
+	node_0000019ead6f8da0 -> node_0000019ead6f8f20;
 	
-	rankdir = TB;
-	node [ color = "#004b00", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
-	edge [ color = "#004b00", fontsize = 16];
-
-	node_0000019ead6f8de0 [ shape = "Mrecord", label = "{ data = 30\n addr: 0000019ead6f8de0 | { L:\n addr: 0000019ead6f8e00 |R: \n addr: 0000000000000000 } }" ];
-
-	node_0000019ead6f8e00 [ shape = "Mrecord", label = "{ data = 10\n addr: 0000019ead6f8e00 | { L:\n addr: 0000000000000000 |R: \n addr: 0000000000000000 } }" ];
-	node_0000019ead6f8de0 -> node_0000019ead6f8e00;
-
-	{
-		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
-		edge [ color = "#007cff", fontsize = 16];
-
-		node__null_0000019ead6f8de0 [shape = "Mrecord", label = "{ addr: (null) | { L:\n addr: (null) | R: \n addr: (null) } }" ];
-		node_0000019ead6f8de0 -> node__null_0000019ead6f8de0;
-	}
 }

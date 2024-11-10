@@ -122,7 +122,7 @@ void Dump_graph_recursive (node_akntr* node)
         fprintf(Graph_File, "\n"   
             "\t\tnode_%p [ shape = \"Mrecord\", label = \" { data = %d\\n addr: %p | { L:\\n addr: %p | R: \\n addr: %p } }\" ];", node -> right, node -> right -> data, node -> right, node -> right -> left, node -> right -> right);
         fprintf(Graph_File, "\n"
-            "\t\tnode%p  -> node_%p;\n", node, node -> right);
+            "\t\tnode_%p  -> node_%p;\n", node, node -> right);
     }
     else {
         fprintf(Graph_File, "\n"
