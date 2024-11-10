@@ -16,7 +16,8 @@ struct akinator
 
 FILE*  Create_file (const char* name_of_file);
 node_akntr* Create_node (el_t data);
-void Dump_graph (node_akntr* node);
+void Dump_graph_init (node_akntr* node);
+void Dump_graph_recursive (node_akntr* node);
 void Dump_in_line (node_akntr* node);
 FILE* Close_File (FILE* file);
 

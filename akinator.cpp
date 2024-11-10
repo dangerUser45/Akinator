@@ -33,8 +33,7 @@ int main ()
     node70 -> right = node80;
 
     Dump_in_line (node50_root);
-    Dump_graph (node50_root);
-    Dump_graph (node10);
+    Dump_graph_init (node50_root);
 
     Close_File (Log_File);
     Close_File (Graph_File);
@@ -77,33 +76,33 @@ FILE* Close_File (FILE* file)
     return file;
 }
 //====================================================================================================================================
-void Dump_graph (node_akntr* node)
+void Dump_graph_recursive (node_akntr* node)
 {
     if (!node) return;       
     fprintf(Graph_File, ""                                                                                                                  
-                                                                                                                                              
-    "digraph\n" 
-    "{\n"
         "\trankdir = TB;\n"
 
-        "\t{\n"                                                         //
+        /*"\t{\n"                                                         //
             "\t\tnode[shape=plaintext];\n"
             "\t\tedge[color=white]\n"
             "\t\t\"1\" ->  \"2\";\n" 
-        "\t}\n\n"
+        "\t}\n\n"*/
  
         "\tnode [ color = \"#004b00\", shape = \"rectangle\", style = \"filled\", fillcolor = \"#a2f8a4\"];\n"
         "\tedge [ color = \"#004b00\", fontsize = 16];\n\n");
 
     fprintf(Graph_File, ""
-        "\tnull [ shape = \"Mrecord\", label = \"{ data = %d\\n addr: %p | { <left> L:\\n addr: %p | <right> R: \\n addr: %p } }\" ];\n", node -> data, node, node -> left, node -> right);
+        "\tnode_%p [ shape = \"Mrecord\", label = \"{ data = %d\\n addr: %p | { L:\\n addr: %p | R: \\n addr: %p } }\" ];\n", node, node -> data, node, node -> left, node -> right);
     
     if (node -> left != NULL)
     {
         fprintf(Graph_File, "\n"
-        "\tfirst[ shape = \"Mrecord\", label = \"{ data = %d\\n addr: %p | { <left> L:\\n addr: %p \\n| <right> R: \\n addr: %p \\n} }\" ];\n", node -> left -> data, node -> left, node -> left -> left, node -> left -> right);
+        "\tnode_%p[ shape = \"Mrecord\", label = \"{ data = %d\\n addr: %p | { L:\\n addr: %p |   R: \\n addr: %p } }\" ];\n", node -> left,  node -> left -> data, node -> left, node -> left -> left, node -> left -> right);
         fprintf (Graph_File, ""
-        "\tnull:<left> -> first;\n");
+        "\tnode_%p  -> node_%p;\n", node, node -> left);
+        
+       //Dump_graph_recursive (node -> left);
+
     }
     else {
         fprintf(Graph_File, "\n"
@@ -111,18 +110,19 @@ void Dump_graph (node_akntr* node)
             "\t\tnode [ color = \"#007cff\", shape = \"rectangle\", style = \"filled\", fillcolor = \"#a2f0f8\"];\n"
             "\t\tedge [ color = \"#007cff\", fontsize = 16];\n\n"
 
-            "\t\tfirst[ shape = \"Mrecord\", label = \"{ addr: %s | { <left> L:\\n addr: %s | <right> R: \\n addr: %s } }\" ];\n", "(null)",  "(null)", "(null)");
+            "\t\tnode_l_null_%p[ shape = \"Mrecord\", label = \"{ addr: %s | {   L:\\n addr: %s |   R: \\n addr: %s } }\" ];\n", node, "(null)",  "(null)", "(null)");
         fprintf(Graph_File, ""
-            "\t\tnull:<left> -> first;\n"
+            "\t\tnode_%p  -> node_l_null_%p;\n", node, node);
+        fprintf(Graph_File, ""
             "\t}\n");
         }  
 
     if (node -> right != NULL)
     {
         fprintf(Graph_File, "\n"   
-            "\t\tsecond  [ shape = \"Mrecord\", label = \" { data = %d\\n addr: %p | { <left> L:\\n addr: %p | <right> R: \\n addr: %p } }\" ];", node -> right -> data, node -> right, node -> right -> left, node -> right -> right);
+            "\t\tnode_%p [ shape = \"Mrecord\", label = \" { data = %d\\n addr: %p | { L:\\n addr: %p | R: \\n addr: %p } }\" ];", node -> right, node -> right -> data, node -> right, node -> right -> left, node -> right -> right);
         fprintf(Graph_File, "\n"
-            "\t\tnull:<right> -> second;\n");
+            "\t\tnode%p  -> node_%p;\n", node, node -> right);
     }
     else {
         fprintf(Graph_File, "\n"
@@ -130,17 +130,21 @@ void Dump_graph (node_akntr* node)
             "\t\tnode [ color = \"#007cff\", shape = \"rectangle\", style = \"filled\", fillcolor = \"#a2f0f8\"];\n"
             "\t\tedge [ color = \"#007cff\", fontsize = 16];\n\n"
 
-            "\t\tsecond[shape = \"Mrecord\", label = \"{ addr: %s | { <left> L:\\n addr: %s | <right> R: \\n addr: %s } }\" ];\n", "(null)",  "(null)", "(null)");
+            "\t\tnode_r_null_%p [shape = \"Mrecord\", label = \"{ addr: %s | { L:\\n addr: %s | R: \\n addr: %s } }\" ];\n", node, "(null)",  "(null)", "(null)");
         
         fprintf(Graph_File, ""
-            "\t\tnull:<right> -> second;\n"
+            "\t\tnode_%p  -> node_r_null_%p;\n", node, node);
+        fprintf(Graph_File, ""   
             "\t}\n");
-        }  
+          }
 
-        fprintf (Graph_File, "\n"
+        Dump_graph_recursive (node -> left);
+        Dump_graph_recursive (node -> right);
+
+        /*fprintf (Graph_File, "\n"
             "\t{ rank = same; \"1\"; \"null\" }\n"
             "\t{ rank = same; \"2\"; \"first\"; \"second\";}\n"
-        "}");
+                );*/
 }
 //====================================================================================================================================
 void Dump_in_line (node_akntr* node)
@@ -155,5 +159,12 @@ void Dump_in_line (node_akntr* node)
     fprintf (Log_File, ")");
 }
 //====================================================================================================================================
-
+void Dump_graph_init (node_akntr* node)
+{
+    fprintf (Graph_File, "digraph\n" 
+                         "{\n");
+    Dump_graph_recursive (node);
+    fprintf (Graph_File, "}");
+}
+//====================================================================================================================================
 

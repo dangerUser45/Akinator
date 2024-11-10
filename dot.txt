@@ -1,56 +1,104 @@
-digraph N
+digraph
 {
 	rankdir = TB;
-	{
-		node[shape=plaintext];
-		edge[color=white]
-		"1" ->  "2";
-	}
-
 	node [ color = "#004b00", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
 	edge [ color = "#004b00", fontsize = 16];
 
-	null [ shape = "Mrecord", label = "{ data = 50\n addr: 0000022a138890c0 | { <left> L:\n addr: 0000022a13888de0 | <right> R: \n addr: 0000022a138890e0 } }" ];
+	node_000001daccec8f40 [ shape = "Mrecord", label = "{ data = 50\n addr: 000001daccec8f40 | { L:\n addr: 000001daccec8dc0 | R: \n addr: 000001daccec8e00 } }" ];
 
-	first[ shape = "Mrecord", label = "{ data = 30\n addr: 0000022a13888de0 | { <left> L:\n addr: 0000022a13888f60 \n| <right> R: \n addr: 0000000000000000 \n} }" ];
-	null:<left> -> first;
+	node_000001daccec8dc0[ shape = "Mrecord", label = "{ data = 30\n addr: 000001daccec8dc0 | { L:\n addr: 000001daccec8fe0 |   R: \n addr: 0000000000000000 } }" ];
+	node_000001daccec8f40  -> node_000001daccec8dc0;
 
-		second  [ shape = "Mrecord", label = " { data = 70\n addr: 0000022a138890e0 | { <left> L:\n addr: 0000022a13888e20 | <right> R: \n addr: 0000022a13888e60 } }" ];
-		null:<right> -> second;
-
-	{ rank = same; "1"; "null" }
-	{ rank = same; "2"; "first"; "second";}
-
-{
+		node_000001daccec8e00 [ shape = "Mrecord", label = " { data = 70\n addr: 000001daccec8e00 | { L:\n addr: 000001daccec8fc0 | R: \n addr: 000001daccec8f80 } }" ];
+		node000001daccec8f40  -> node_000001daccec8e00;
 	rankdir = TB;
-	{
-		node[shape=plaintext];
-		edge[color=white]
-		"1" ->  "2";
-	}
-
 	node [ color = "#004b00", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
 	edge [ color = "#004b00", fontsize = 16];
 
-	null [ shape = "Mrecord", label = "{ data = 10\n addr: 0000022a13888f60 | { <left> L:\n addr: 0000000000000000 | <right> R: \n addr: 0000000000000000 } }" ];
+	node_000001daccec8dc0 [ shape = "Mrecord", label = "{ data = 30\n addr: 000001daccec8dc0 | { L:\n addr: 000001daccec8fe0 | R: \n addr: 0000000000000000 } }" ];
+
+	node_000001daccec8fe0[ shape = "Mrecord", label = "{ data = 10\n addr: 000001daccec8fe0 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
+	node_000001daccec8dc0  -> node_000001daccec8fe0;
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		first[ shape = "Mrecord", label = "{ addr: (null) | { <left> L:\n addr: (null) | <right> R: \n addr: (null) } }" ];
-		null:<left> -> first;
+		node_r_null_000001daccec8dc0 [shape = "Mrecord", label = "{ addr: (null) | { L:\n addr: (null) | R: \n addr: (null) } }" ];
+		node_000001daccec8dc0  -> node_r_null_000001daccec8dc0;
+	}
+	rankdir = TB;
+	node [ color = "#004b00", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
+	edge [ color = "#004b00", fontsize = 16];
+
+	node_000001daccec8fe0 [ shape = "Mrecord", label = "{ data = 10\n addr: 000001daccec8fe0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_l_null_000001daccec8fe0[ shape = "Mrecord", label = "{ addr: (null) | {   L:\n addr: (null) |   R: \n addr: (null) } }" ];
+		node_000001daccec8fe0  -> node_l_null_000001daccec8fe0;
 	}
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		second[shape = "Mrecord", label = "{ addr: (null) | { <left> L:\n addr: (null) | <right> R: \n addr: (null) } }" ];
-		null:<right> -> second;
+		node_r_null_000001daccec8fe0 [shape = "Mrecord", label = "{ addr: (null) | { L:\n addr: (null) | R: \n addr: (null) } }" ];
+		node_000001daccec8fe0  -> node_r_null_000001daccec8fe0;
+	}
+	rankdir = TB;
+	node [ color = "#004b00", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
+	edge [ color = "#004b00", fontsize = 16];
+
+	node_000001daccec8e00 [ shape = "Mrecord", label = "{ data = 70\n addr: 000001daccec8e00 | { L:\n addr: 000001daccec8fc0 | R: \n addr: 000001daccec8f80 } }" ];
+
+	node_000001daccec8fc0[ shape = "Mrecord", label = "{ data = 65\n addr: 000001daccec8fc0 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
+	node_000001daccec8e00  -> node_000001daccec8fc0;
+
+		node_000001daccec8f80 [ shape = "Mrecord", label = " { data = 80\n addr: 000001daccec8f80 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+		node000001daccec8e00  -> node_000001daccec8f80;
+	rankdir = TB;
+	node [ color = "#004b00", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
+	edge [ color = "#004b00", fontsize = 16];
+
+	node_000001daccec8fc0 [ shape = "Mrecord", label = "{ data = 65\n addr: 000001daccec8fc0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_l_null_000001daccec8fc0[ shape = "Mrecord", label = "{ addr: (null) | {   L:\n addr: (null) |   R: \n addr: (null) } }" ];
+		node_000001daccec8fc0  -> node_l_null_000001daccec8fc0;
 	}
 
-	{ rank = same; "1"; "null" }
-	{ rank = same; "2"; "first"; "second";}
-}
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_r_null_000001daccec8fc0 [shape = "Mrecord", label = "{ addr: (null) | { L:\n addr: (null) | R: \n addr: (null) } }" ];
+		node_000001daccec8fc0  -> node_r_null_000001daccec8fc0;
+	}
+	rankdir = TB;
+	node [ color = "#004b00", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
+	edge [ color = "#004b00", fontsize = 16];
+
+	node_000001daccec8f80 [ shape = "Mrecord", label = "{ data = 80\n addr: 000001daccec8f80 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_l_null_000001daccec8f80[ shape = "Mrecord", label = "{ addr: (null) | {   L:\n addr: (null) |   R: \n addr: (null) } }" ];
+		node_000001daccec8f80  -> node_l_null_000001daccec8f80;
+	}
+
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_r_null_000001daccec8f80 [shape = "Mrecord", label = "{ addr: (null) | { L:\n addr: (null) | R: \n addr: (null) } }" ];
+		node_000001daccec8f80  -> node_r_null_000001daccec8f80;
+	}
 }
