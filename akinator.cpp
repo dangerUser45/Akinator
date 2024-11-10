@@ -24,22 +24,23 @@ int main ()
     node_akntr* node65 = Create_node (65);
     node_akntr* node80 = Create_node (80);
 
+
     node50_root -> left  = node30;
     node50_root -> right = node70;
 
     node30 -> left = node10;
-
     node70 -> left = node65;
     node70 -> right = node80;
 
-    Dump_in_line (node50_root);
-    Dump_graph_init (node50_root);
+    Insert(node50_root, 100);
+
+    Dump_akin (node50_root);
 
     Close_File (Log_File);
     Close_File (Graph_File);
     system ("dot Dot.txt -Tpng -o tree.png");
 
-     txDisableAutoPause ();
+    txDisableAutoPause ();
 
     return 0;
 }
@@ -76,34 +77,30 @@ FILE* Close_File (FILE* file)
     return file;
 }
 //====================================================================================================================================
-void Dump_graph_recursive (node_akntr* node)
+void Dump_graph_recursive (node_akntr* node, size_t rank)
 {
-    if (!node) return;       
-    fprintf(Graph_File, ""                                                                                                                  
-        "\trankdir = TB;\n"
-
-        /*"\t{\n"                                                         //
-            "\t\tnode[shape=plaintext];\n"
-            "\t\tedge[color=white]\n"
-            "\t\t\"1\" ->  \"2\";\n" 
-        "\t}\n\n"*/
- 
-        "\tnode [ color = \"#004b00\", shape = \"rectangle\", style = \"filled\", fillcolor = \"#a2f8a4\"];\n"
-        "\tedge [ color = \"#004b00\", fontsize = 16];\n\n");
-
+    if (!node) return;                                                                                                                    
+    
     fprintf(Graph_File, ""
         "\tnode_%p [ shape = \"Mrecord\", label = \"{ data = %d\\n addr: %p | { L:\\n addr: %p | R: \\n addr: %p } }\" ];\n", node, node -> data, node, node -> left, node -> right);
+
+    fprintf (Graph_File, ""
+        "\t{\n"                                                        
+            "\t\tnode[ color = \"#581845\", shape = \"circle\", style = \"filled\" ,fillcolor=\"#fe5656\"];\n"
+            "\t\tedge[ color = \"white\"]\n"
+            "\t\t\"%zu\" ->  \"%zu\";\n", rank, rank + 1);
     
+    fprintf (Graph_File,  "\t}\n\n"
+        "\t{ rank = %zu; \"%zu\"; \"node_%p\" }\n", rank, rank, node);
+
     if (node -> left != NULL)
     {
         fprintf(Graph_File, "\n"
         "\tnode_%p[ shape = \"Mrecord\", label = \"{ data = %d\\n addr: %p | { L:\\n addr: %p |   R: \\n addr: %p } }\" ];\n", node -> left,  node -> left -> data, node -> left, node -> left -> left, node -> left -> right);
         fprintf (Graph_File, ""
         "\tnode_%p  -> node_%p;\n", node, node -> left);
-        
-       //Dump_graph_recursive (node -> left);
-
     }
+
     else {
         fprintf(Graph_File, "\n"
         "\t{\n"
@@ -120,10 +117,11 @@ void Dump_graph_recursive (node_akntr* node)
     if (node -> right != NULL)
     {
         fprintf(Graph_File, "\n"   
-            "\t\tnode_%p [ shape = \"Mrecord\", label = \" { data = %d\\n addr: %p | { L:\\n addr: %p | R: \\n addr: %p } }\" ];", node -> right, node -> right -> data, node -> right, node -> right -> left, node -> right -> right);
+            "\tnode_%p [ shape = \"Mrecord\", label = \" { data = %d\\n addr: %p | { L:\\n addr: %p | R: \\n addr: %p } }\" ];", node -> right, node -> right -> data, node -> right, node -> right -> left, node -> right -> right);
         fprintf(Graph_File, "\n"
-            "\t\tnode_%p  -> node_%p;\n", node, node -> right);
+            "\tnode_%p  -> node_%p;\n", node, node -> right);
     }
+
     else {
         fprintf(Graph_File, "\n"
         "\t{\n"
@@ -134,17 +132,24 @@ void Dump_graph_recursive (node_akntr* node)
         
         fprintf(Graph_File, ""
             "\t\tnode_%p  -> node_r_null_%p;\n", node, node);
-        fprintf(Graph_File, ""   
+        fprintf(Graph_File, "" 
             "\t}\n");
           }
 
-        Dump_graph_recursive (node -> left);
-        Dump_graph_recursive (node -> right);
+        fprintf (Graph_File, ""
+        "\t{\n"                                                        
+            "\t\tnode[ shape = \"plaintext\", style = \"filled\" ,fillcolor=\"white\"];\n"
+            "\t\tedge[ color = \"white\"]\n"
+            "\t\t\"%zu\" ->  \"%zu\";\n", rank, rank + 1);
 
-        /*fprintf (Graph_File, "\n"
-            "\t{ rank = same; \"1\"; \"null\" }\n"
-            "\t{ rank = same; \"2\"; \"first\"; \"second\";}\n"
-                );*/
+        fprintf (Graph_File, ""
+        "\t}\n\n");
+
+        ++rank;
+
+        Dump_graph_recursive (node -> left, rank);
+        Dump_graph_recursive (node -> right, rank);
+
 }
 //====================================================================================================================================
 void Dump_in_line (node_akntr* node)
@@ -162,9 +167,35 @@ void Dump_in_line (node_akntr* node)
 void Dump_graph_init (node_akntr* node)
 {
     fprintf (Graph_File, "digraph\n" 
-                         "{\n");
-    Dump_graph_recursive (node);
+    "{\n"
+    
+    "\trankdir = TB;\n"
+        "\tnode [ color = \"#004b00\", shape = \"rectangle\", style = \"filled\", fillcolor = \"#a2f8a4\"];\n"
+        "\tedge [ color = \"#004b00\", fontsize = 16];\n\n");
+
+    Dump_graph_recursive (node, 1);
     fprintf (Graph_File, "}");
 }
 //====================================================================================================================================
+int Dump_akin (node_akntr* node)
+{
+    Dump_in_line (node);
+    Dump_graph_init (node);
+
+    fprintf (Log_File ,"\n<img src = \"%s\" width = %d%%>", NAME_PNG_FILE, 75);
+
+    return 0;
+}
+//====================================================================================================================================
+void Insert (node_akntr* node, el_t value)
+{
+    if (value < node -> data ) {
+        Insert (node -> left, value);
+        if (!node -> left) {node -> left = Create_node (value); return;}}
+    else {
+        Insert (node -> right, value);
+        if (!node -> right) {node -> right = Create_node (value); return;}};
+}
+//====================================================================================================================================
+
 
