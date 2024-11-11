@@ -32,12 +32,12 @@ int main ()
     node70 -> left = node65;
     node70 -> right = node80;
 
-    //Insert(node50_root, 100);
+   $$ Insert(node50_root, 100);
 
-    Dump_akin (node50_root);
+   $$ Dump_akin (node50_root);
 
-    Close_File (Log_File);
-    Close_File (Graph_File);
+   $$ Close_File (Log_File);
+   $$ Close_File (Graph_File);
     system ("dot Dot.txt -Tpng -o tree.png");
 
     txDisableAutoPause ();
@@ -189,13 +189,33 @@ int Dump_akin (node_akntr* node)
 //====================================================================================================================================
 void Insert (node_akntr* node, el_t value)
 {
-    if (value < node -> data ) {
-        Insert (node -> left, value);
-        if (!node -> left) {node -> left = Create_node (value); return;}}
-    else {
-        Insert (node -> right, value);
-        if (!node -> right) {node -> right = Create_node (value); return;}};
+    node_akntr* new_node = 0;
+    int ct = 0;
+    if (!node) return;
+
+    while (1)
+    {
+        if (value < node -> data)
+        {
+            new_node = node -> left;
+            if (!new_node)
+            {
+                node -> left = Create_node (value);
+                return;
+            }
+            node = new_node;
+        }
+        else 
+        {
+            new_node = node -> right; 
+            if (!new_node) 
+            {
+                node -> right = Create_node (value); 
+                return;
+            }
+            node = new_node;
+        }   
+    }
 }
 //====================================================================================================================================
-
 
