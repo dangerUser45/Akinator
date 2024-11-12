@@ -193,7 +193,7 @@ int Dump_akin (node_akntr* node, node_akntr* new_node)
     char* name_cmd = (char*) calloc (64, sizeof (char));
     char* name_pic = (char*) calloc (16, sizeof (char));
 
-    sprintf (name_cmd, "dot Dot.txt -Tpng -o Picture_tree/tree_%zu.png", number_pic);
+    sprintf (name_cmd, "dot Dot.txt -Tpng -o tree_%zu.png", number_pic);
     sprintf (name_pic, "tree_%zu.png", number_pic);
 
     Dump_in_line (node);
@@ -202,7 +202,7 @@ int Dump_akin (node_akntr* node, node_akntr* new_node)
     Close_File (Graph_File);
     system (name_cmd);
 
-    fprintf (Log_File ,"\n<img src = Picture_tree/\"%s\" width = %d%%>\n\n\n\n\n\n\n\n\n\n", name_pic, SCALE);
+    fprintf (Log_File ,"\n<img src = \"Picture_tree/%s\" width = %d%%>\n\n\n\n\n\n\n\n\n\n", name_pic, SCALE);
     fflush (Graph_File);
     ++number_pic;
     
@@ -242,4 +242,4 @@ void Insert (node_akntr* node, el_t value)
     }
 }
 //====================================================================================================================================
-
+int 
