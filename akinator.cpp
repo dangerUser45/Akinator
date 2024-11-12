@@ -13,31 +13,37 @@ FILE* Graph_File = 0;
 int main ()
 {
     Log_File = Create_file ("LOG_AKINATOR.html");
-    Graph_File = Create_file ("Dot.txt");
-
     fprintf (Log_File, "<pre>");
+    //system ("mkdir Picture_tree");
+
 
     node_akntr* node_root = Create_node ("DEEEEEEEEEEEEEEEEED");
     node_akntr* node_1 = Create_node ("ded_lox");
-    node_akntr* node_2 = Create_node ("ded_balbes");
+    node_akntr* node_2 = Create_node ("danik_balbes");
     node_akntr* node_3 = Create_node ("ded_kvadrober");
     node_akntr* node_4 = Create_node ("ded_penisoed");
     node_akntr* node_5 = Create_node ("ded_delaet_minet");
     node_akntr* node_6 = Create_node ("ded_na_golove_omlet");
 
     node_root -> left = node_1;
+    Dump_akin (node_root, node_1);
+
     node_root -> right = node_2;
+    Dump_akin (node_root, node_2);
+
     node_1 -> left = node_3;
+    Dump_akin (node_root, node_3);
+
     node_3 -> right = node_4;
+    Dump_akin (node_root, node_4);
+
     node_2 -> left = node_5;
+    Dump_akin (node_root, node_5);
+
     node_2 -> right = node_6;
-     
-    Dump_akin (node_root);
+    Dump_akin (node_root, node_6);
 
     Close_File (Log_File);
-    Close_File (Graph_File);
-    system ("dot Dot.txt -Tpng -o tree.png");
-
     txDisableAutoPause ();
 
     return 0;
@@ -105,7 +111,7 @@ void Dump_graph_recursive (node_akntr* node, size_t rank)
             "\t\tnode [ color = \"#007cff\", shape = \"rectangle\", style = \"filled\", fillcolor = \"#a2f0f8\"];\n"
             "\t\tedge [ color = \"#007cff\", fontsize = 16];\n\n"
 
-            "\t\tnode_l_null_%p[ shape = \"Mrecord\", label = \"{ addr: %s | {   L:\\n addr: %s |   R: \\n addr: %s } }\" ];\n", node, "(null)",  "(null)", "(null)");
+            "\t\tnode_l_null_%p[ shape = \"ellipse\", label = \"null\" ];\n", node);
         fprintf(Graph_File, ""
             "\t\tnode_%p  -> node_l_null_%p;\n", node, node);
         fprintf(Graph_File, ""
@@ -126,7 +132,7 @@ void Dump_graph_recursive (node_akntr* node, size_t rank)
             "\t\tnode [ color = \"#007cff\", shape = \"rectangle\", style = \"filled\", fillcolor = \"#a2f0f8\"];\n"
             "\t\tedge [ color = \"#007cff\", fontsize = 16];\n\n"
 
-            "\t\tnode_r_null_%p [shape = \"Mrecord\", label = \"{ addr: %s | { L:\\n addr: %s | R: \\n addr: %s } }\" ];\n", node, "(null)",  "(null)", "(null)");
+            "\t\tnode_r_null_%p [shape = \"ellipse\", label = \" null\" ];\n", node);
         
         fprintf(Graph_File, ""
             "\t\tnode_%p  -> node_r_null_%p;\n", node, node);
@@ -162,7 +168,7 @@ void Dump_in_line (node_akntr* node)
     fprintf (Log_File, ")");
 }
 //====================================================================================================================================
-void Dump_graph_init (node_akntr* node)
+void Dump_graph_init (node_akntr* node, node_akntr* new_node)
 {
     fprintf (Graph_File, "digraph\n" 
     "{\n"
@@ -172,15 +178,36 @@ void Dump_graph_init (node_akntr* node)
         "\tedge [ color = \"#004b00\", fontsize = 16];\n\n");
 
     Dump_graph_recursive (node, 1);
+
+    fprintf(Graph_File, "\n"   
+            "\tnode_%p [ fillcolor = \"#ffa615\"];\n", new_node);
+
     fprintf (Graph_File, "}");
 }
 //====================================================================================================================================
-int Dump_akin (node_akntr* node)
+int Dump_akin (node_akntr* node, node_akntr* new_node)
 {
-    Dump_in_line (node);
-    Dump_graph_init (node);
+    Graph_File = Create_file ("Dot.txt");
+    static size_t number_pic = 1;
+    
+    char* name_cmd = (char*) calloc (64, sizeof (char));
+    char* name_pic = (char*) calloc (16, sizeof (char));
 
-    fprintf (Log_File ,"\n<img src = \"%s\" width = %d%%>", NAME_PNG_FILE, SCALE);
+    sprintf (name_cmd, "dot Dot.txt -Tpng -o Picture_tree/tree_%zu.png", number_pic);
+    sprintf (name_pic, "tree_%zu.png", number_pic);
+
+    Dump_in_line (node);
+    Dump_graph_init (node, new_node);
+
+    Close_File (Graph_File);
+    system (name_cmd);
+
+    fprintf (Log_File ,"\n<img src = Picture_tree/\"%s\" width = %d%%>\n\n\n\n\n\n\n\n\n\n", name_pic, SCALE);
+    fflush (Graph_File);
+    ++number_pic;
+    
+    free (name_cmd);
+    free (name_pic);
 
     return 0;
 }

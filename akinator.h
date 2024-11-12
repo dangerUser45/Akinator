@@ -16,14 +16,13 @@ struct akinator
 
 FILE*  Create_file (const char* name_of_file);
 node_akntr* Create_node (el_t data);
-void Dump_graph_init (node_akntr* node);
+void Dump_graph_init (node_akntr* node, node_akntr* new_node);
 void Dump_graph_recursive (node_akntr* node, size_t rank);
 void Dump_in_line (node_akntr* node);
 FILE* Close_File (FILE* file);
-int Dump_akin (node_akntr* node);
+int Dump_akin (node_akntr* node, node_akntr* new_node);
 void Insert (node_akntr* node, el_t value);
 
 #define TYPE "s"
 
-const char* NAME_PNG_FILE = "tree.png";
 const int SCALE = 50;

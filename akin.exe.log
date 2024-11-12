@@ -838,3 +838,191 @@ Run file:	D:\GitHub\Akinator\akin.exe
 Directory:	D:\GitHub\Akinator
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF66E4AF4A8 (64-bit), Flags: Cmdre0, Thread: 0x4290 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 1 0x00007FFE23C6F393 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23C17952 in C:\Windows\SYSTEM32\ntdll.dll: memset()
+# 6 0x00007FFE23B947B1 in C:\Windows\SYSTEM32\ntdll.dll: RtlFreeHeap()
+# 7 0x00007FFE22F29C9C in C:\Windows\System32\msvcrt.dll: free()
+# 8 0x00007FFE22F28508 in C:\Windows\System32\msvcrt.dll: system()
+# 9 0x00007FFE22F265D3 in C:\Windows\System32\msvcrt.dll: spawnve()
+#10 0x00007FFE22F2645E in C:\Windows\System32\msvcrt.dll: spawnve()
+#11 0x00007FFE22F27F00 in C:\Windows\System32\msvcrt.dll: system()
+#12 0x00007FF66E341BA8 in D:\GitHub\Akinator\akin.exe: Dump_akin()
+#13 0x00007FF66E34152A in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 12 2024 19:23:34, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 12 2024 22:09:18
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF66E4AF4A8 (64-bit), Flags: Cmdre0, Thread: 0x4290 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 1 0x00007FFE23C6F393 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23C17952 in C:\Windows\SYSTEM32\ntdll.dll: memset()
+# 6 0x00007FFE23B947B1 in C:\Windows\SYSTEM32\ntdll.dll: RtlFreeHeap()
+# 7 0x00007FFE22F29C9C in C:\Windows\System32\msvcrt.dll: free()
+# 8 0x00007FFE22F28508 in C:\Windows\System32\msvcrt.dll: system()
+# 9 0x00007FFE22F265D3 in C:\Windows\System32\msvcrt.dll: spawnve()
+#10 0x00007FFE22F2645E in C:\Windows\System32\msvcrt.dll: spawnve()
+#11 0x00007FFE22F27F00 in C:\Windows\System32\msvcrt.dll: system()
+#12 0x00007FF66E341BA8 in D:\GitHub\Akinator\akin.exe: Dump_akin()
+#13 0x00007FF66E34152A in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 12 2024 19:23:34, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 12 2024 22:09:18
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF677E804A8 (64-bit), Flags: Cmdre0, Thread: 0x39B0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 1 0x00007FFE23C6F393 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23C17952 in C:\Windows\SYSTEM32\ntdll.dll: memset()
+# 6 0x00007FFE23B947B1 in C:\Windows\SYSTEM32\ntdll.dll: RtlFreeHeap()
+# 7 0x00007FFE22F29C9C in C:\Windows\System32\msvcrt.dll: free()
+# 8 0x00007FFE22F28508 in C:\Windows\System32\msvcrt.dll: system()
+# 9 0x00007FFE22F265D3 in C:\Windows\System32\msvcrt.dll: spawnve()
+#10 0x00007FFE22F2645E in C:\Windows\System32\msvcrt.dll: spawnve()
+#11 0x00007FFE22F27F00 in C:\Windows\System32\msvcrt.dll: system()
+#12 0x00007FF677D11BE2 in D:\GitHub\Akinator\akin.exe: Dump_akin()
+#13 0x00007FF677D1152A in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 12 2024 19:23:34, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 12 2024 22:10:38
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF677E804A8 (64-bit), Flags: Cmdre0, Thread: 0x39B0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 1 0x00007FFE23C6F393 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23C17952 in C:\Windows\SYSTEM32\ntdll.dll: memset()
+# 6 0x00007FFE23B947B1 in C:\Windows\SYSTEM32\ntdll.dll: RtlFreeHeap()
+# 7 0x00007FFE22F29C9C in C:\Windows\System32\msvcrt.dll: free()
+# 8 0x00007FFE22F28508 in C:\Windows\System32\msvcrt.dll: system()
+# 9 0x00007FFE22F265D3 in C:\Windows\System32\msvcrt.dll: spawnve()
+#10 0x00007FFE22F2645E in C:\Windows\System32\msvcrt.dll: spawnve()
+#11 0x00007FFE22F27F00 in C:\Windows\System32\msvcrt.dll: system()
+#12 0x00007FF677D11BE2 in D:\GitHub\Akinator\akin.exe: Dump_akin()
+#13 0x00007FF677D1152A in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 12 2024 19:23:34, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 12 2024 22:10:39
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
