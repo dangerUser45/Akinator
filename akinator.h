@@ -1,6 +1,6 @@
 #pragma once
 
-typedef int el_t;
+typedef const char* el_t;
 
 struct node_akntr
 {
@@ -23,6 +23,7 @@ FILE* Close_File (FILE* file);
 int Dump_akin (node_akntr* node);
 void Insert (node_akntr* node, el_t value);
 
-#define TYPE "d"
+#define TYPE "s"
 
 const char* NAME_PNG_FILE = "tree.png";
+const int SCALE = 50;

@@ -17,27 +17,25 @@ int main ()
 
     fprintf (Log_File, "<pre>");
 
-    node_akntr* node50_root = Create_node (50);
-    node_akntr* node30 = Create_node (30);
-    node_akntr* node70 = Create_node (70);
-    node_akntr* node10 = Create_node (10);
-    node_akntr* node65 = Create_node (65);
-    node_akntr* node80 = Create_node (80);
+    node_akntr* node_root = Create_node ("DEEEEEEEEEEEEEEEEED");
+    node_akntr* node_1 = Create_node ("ded_lox");
+    node_akntr* node_2 = Create_node ("ded_balbes");
+    node_akntr* node_3 = Create_node ("ded_kvadrober");
+    node_akntr* node_4 = Create_node ("ded_penisoed");
+    node_akntr* node_5 = Create_node ("ded_delaet_minet");
+    node_akntr* node_6 = Create_node ("ded_na_golove_omlet");
 
+    node_root -> left = node_1;
+    node_root -> right = node_2;
+    node_1 -> left = node_3;
+    node_3 -> right = node_4;
+    node_2 -> left = node_5;
+    node_2 -> right = node_6;
+     
+    Dump_akin (node_root);
 
-    node50_root -> left  = node30;
-    node50_root -> right = node70;
-
-    node30 -> left = node10;
-    node70 -> left = node65;
-    node70 -> right = node80;
-
-   $$ Insert(node50_root, 100);
-
-   $$ Dump_akin (node50_root);
-
-   $$ Close_File (Log_File);
-   $$ Close_File (Graph_File);
+    Close_File (Log_File);
+    Close_File (Graph_File);
     system ("dot Dot.txt -Tpng -o tree.png");
 
     txDisableAutoPause ();
@@ -82,11 +80,11 @@ void Dump_graph_recursive (node_akntr* node, size_t rank)
     if (!node) return;                                                                                                                    
     
     fprintf(Graph_File, ""
-        "\tnode_%p [ shape = \"Mrecord\", label = \"{ data = %d\\n addr: %p | { L:\\n addr: %p | R: \\n addr: %p } }\" ];\n", node, node -> data, node, node -> left, node -> right);
+        "\tnode_%p [ shape = \"Mrecord\", label = \"{ data = %"TYPE" \\n addr: %p | { L:\\n addr: %p | R: \\n addr: %p } }\" ];\n", node, node -> data, node, node -> left, node -> right);
 
     fprintf (Graph_File, ""
         "\t{\n"                                                        
-            "\t\tnode[ color = \"#581845\", shape = \"circle\", style = \"filled\" ,fillcolor=\"#fe5656\"];\n"
+            "\t\tnode[ color = \"#58184PE\", shape = \"circle\", style = \"filled\" ,fillcolor=\"#fe5656\"];\n"
             "\t\tedge[ color = \"white\"]\n"
             "\t\t\"%zu\" ->  \"%zu\";\n", rank, rank + 1);
     
@@ -96,7 +94,7 @@ void Dump_graph_recursive (node_akntr* node, size_t rank)
     if (node -> left != NULL)
     {
         fprintf(Graph_File, "\n"
-        "\tnode_%p[ shape = \"Mrecord\", label = \"{ data = %d\\n addr: %p | { L:\\n addr: %p |   R: \\n addr: %p } }\" ];\n", node -> left,  node -> left -> data, node -> left, node -> left -> left, node -> left -> right);
+        "\tnode_%p[ shape = \"Mrecord\", label = \"{ data = %"TYPE"\\n addr: %p | { L:\\n addr: %p |   R: \\n addr: %p } }\" ];\n", node -> left,  node -> left -> data, node -> left, node -> left -> left, node -> left -> right);
         fprintf (Graph_File, ""
         "\tnode_%p  -> node_%p;\n", node, node -> left);
     }
@@ -117,7 +115,7 @@ void Dump_graph_recursive (node_akntr* node, size_t rank)
     if (node -> right != NULL)
     {
         fprintf(Graph_File, "\n"   
-            "\tnode_%p [ shape = \"Mrecord\", label = \" { data = %d\\n addr: %p | { L:\\n addr: %p | R: \\n addr: %p } }\" ];", node -> right, node -> right -> data, node -> right, node -> right -> left, node -> right -> right);
+            "\tnode_%p [ shape = \"Mrecord\", label = \" { data = %"TYPE"\\n addr: %p | { L:\\n addr: %p | R: \\n addr: %p } }\" ];", node -> right, node -> right -> data, node -> right, node -> right -> left, node -> right -> right);
         fprintf(Graph_File, "\n"
             "\tnode_%p  -> node_%p;\n", node, node -> right);
     }
@@ -182,7 +180,7 @@ int Dump_akin (node_akntr* node)
     Dump_in_line (node);
     Dump_graph_init (node);
 
-    fprintf (Log_File ,"\n<img src = \"%s\" width = %d%%>", NAME_PNG_FILE, 75);
+    fprintf (Log_File ,"\n<img src = \"%s\" width = %d%%>", NAME_PNG_FILE, SCALE);
 
     return 0;
 }
@@ -190,7 +188,6 @@ int Dump_akin (node_akntr* node)
 void Insert (node_akntr* node, el_t value)
 {
     node_akntr* new_node = 0;
-    int ct = 0;
     if (!node) return;
 
     while (1)
