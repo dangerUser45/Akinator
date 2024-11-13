@@ -1,6 +1,12 @@
 #pragma once
 
-typedef const char* el_t;
+
+
+FILE* Log_File = 0;
+FILE* Graph_File = 0;
+FILE* Graph_File_Utf8 = 0;
+
+typedef const char* el_t;    
 
 struct node_akntr
 {
@@ -22,7 +28,10 @@ void Dump_in_line (node_akntr* node);
 FILE* Close_File (FILE* file);
 int Dump_akin (node_akntr* node, node_akntr* new_node);
 void Insert (node_akntr* node, el_t value);
+void Insert_akinator (node_akntr* node);
+void Read3 ();
 
 #define TYPE "s"
 
 const int SCALE = 50;
+

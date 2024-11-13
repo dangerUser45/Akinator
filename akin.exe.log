@@ -1026,3 +1026,331 @@ Run file:	D:\GitHub\Akinator\akin.exe
 Directory:	D:\GitHub\Akinator
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF67788717F в функции __mingw_sformat() в файле E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c на строке 798. Попытка записать данные по адресу 0x00007FF6779830D8 в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6779C44A8 (64-bit), Flags: Cmdre0, Thread: 0x2C38 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF67788717F in D:\GitHub\Akinator\akin.exe: __mingw_sformat() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c (796)
+# 1 0x00007FF67788A630 in D:\GitHub\Akinator\akin.exe: __mingw_vfscanf() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c (1620)
+# 2 0x00007FF67789CE67 in D:\GitHub\Akinator\akin.exe: scanf()
+# 3 0x00007FF677851D95 in D:\GitHub\Akinator\akin.exe: Insert_akinator()
+# 4 0x00007FF6778515C9 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 12 2024 19:23:34, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 13 2024 01:56:48
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF67788717F в функции __mingw_sformat() в файле E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c на строке 798. Попытка записать данные по адресу 0x00007FF6779830D8 в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6779C44A8 (64-bit), Flags: Cmdre0, Thread: 0x2C38 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF67788717F in D:\GitHub\Akinator\akin.exe: __mingw_sformat() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c (796)
+# 1 0x00007FF67788A630 in D:\GitHub\Akinator\akin.exe: __mingw_vfscanf() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c (1620)
+# 2 0x00007FF67789CE67 in D:\GitHub\Akinator\akin.exe: scanf()
+# 3 0x00007FF677851D95 in D:\GitHub\Akinator\akin.exe: Insert_akinator()
+# 4 0x00007FF6778515C9 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 12 2024 19:23:34, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 13 2024 01:56:49
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF67788717F в функции __mingw_sformat() в файле E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c на строке 798. Попытка записать данные по адресу 0x00007FF6779830D8 в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6779C44A8 (64-bit), Flags: Cmdre0, Thread: 0x79C (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF67788717F in D:\GitHub\Akinator\akin.exe: __mingw_sformat() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c (796)
+# 1 0x00007FF67788A630 in D:\GitHub\Akinator\akin.exe: __mingw_vfscanf() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c (1620)
+# 2 0x00007FF67789CE67 in D:\GitHub\Akinator\akin.exe: scanf()
+# 3 0x00007FF677851D95 in D:\GitHub\Akinator\akin.exe: Insert_akinator()
+# 4 0x00007FF6778515C9 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 12 2024 19:23:34, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 13 2024 01:57:07
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF67788717F в функции __mingw_sformat() в файле E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c на строке 798. Попытка записать данные по адресу 0x00007FF6779830D8 в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6779C44A8 (64-bit), Flags: Cmdre0, Thread: 0x79C (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF67788717F in D:\GitHub\Akinator\akin.exe: __mingw_sformat() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c (796)
+# 1 0x00007FF67788A630 in D:\GitHub\Akinator\akin.exe: __mingw_vfscanf() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfscanf.c (1620)
+# 2 0x00007FF67789CE67 in D:\GitHub\Akinator\akin.exe: scanf()
+# 3 0x00007FF677851D95 in D:\GitHub\Akinator\akin.exe: Insert_akinator()
+# 4 0x00007FF6778515C9 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 12 2024 19:23:34, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 13 2024 01:57:07
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE22F6D2D0 в функции strlen(). Попытка прочесть данные по адресу 0xFFFFFFFFFFFFFFFF в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF64EF344C8 (64-bit), Flags: Cmdre0, Thread: 0x2598 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE22F6D2D0 in C:\Windows\System32\msvcrt.dll: strlen()
+# 2 0x00007FF64EDFEF2F in D:\GitHub\Akinator\akin.exe: __mingw_pformat() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_pformat.c (2573)
+# 3 0x00007FF64EDF677D in D:\GitHub\Akinator\akin.exe: __mingw_vfprintf() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfprintf.c (54)
+# 4 0x00007FF64EE0CF87 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 5 0x00007FF64EDC1A97 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 6 0x00007FF64EDC1AB2 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 7 0x00007FF64EDC1AB2 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 8 0x00007FF64EDC1C0F in D:\GitHub\Akinator\akin.exe: Dump_akin()
+# 9 0x00007FF64EDC1529 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 13 2024 03:59:22, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 13 2024 20:08:30
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE22F6D2D0 в функции strlen(). Попытка прочесть данные по адресу 0xFFFFFFFFFFFFFFFF в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF64EF344C8 (64-bit), Flags: Cmdre0, Thread: 0x2598 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE22F6D2D0 in C:\Windows\System32\msvcrt.dll: strlen()
+# 2 0x00007FF64EDFEF2F in D:\GitHub\Akinator\akin.exe: __mingw_pformat() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_pformat.c (2573)
+# 3 0x00007FF64EDF677D in D:\GitHub\Akinator\akin.exe: __mingw_vfprintf() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfprintf.c (54)
+# 4 0x00007FF64EE0CF87 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 5 0x00007FF64EDC1A97 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 6 0x00007FF64EDC1AB2 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 7 0x00007FF64EDC1AB2 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 8 0x00007FF64EDC1C0F in D:\GitHub\Akinator\akin.exe: Dump_akin()
+# 9 0x00007FF64EDC1529 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 13 2024 03:59:22, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 13 2024 20:08:30
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE22F6D2D0 в функции strlen(). Попытка прочесть данные по адресу 0xFFFFFFFFFFFFFFFF в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF64EF344C8 (64-bit), Flags: Cmdre0, Thread: 0x4E70 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE22F6D2D0 in C:\Windows\System32\msvcrt.dll: strlen()
+# 2 0x00007FF64EDFEF2F in D:\GitHub\Akinator\akin.exe: __mingw_pformat() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_pformat.c (2573)
+# 3 0x00007FF64EDF677D in D:\GitHub\Akinator\akin.exe: __mingw_vfprintf() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfprintf.c (54)
+# 4 0x00007FF64EE0CF87 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 5 0x00007FF64EDC1A97 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 6 0x00007FF64EDC1AB2 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 7 0x00007FF64EDC1AB2 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 8 0x00007FF64EDC1C0F in D:\GitHub\Akinator\akin.exe: Dump_akin()
+# 9 0x00007FF64EDC1529 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 13 2024 03:59:22, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 13 2024 20:08:36
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE22F6D2D0 в функции strlen(). Попытка прочесть данные по адресу 0xFFFFFFFFFFFFFFFF в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF64EF344C8 (64-bit), Flags: Cmdre0, Thread: 0x4E70 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE22F6D2D0 in C:\Windows\System32\msvcrt.dll: strlen()
+# 2 0x00007FF64EDFEF2F in D:\GitHub\Akinator\akin.exe: __mingw_pformat() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_pformat.c (2573)
+# 3 0x00007FF64EDF677D in D:\GitHub\Akinator\akin.exe: __mingw_vfprintf() at E:/temp/gcc/build-mingw-w64/mingw-w64-crt/../../src/mingw-w64-crt/stdio/mingw_vfprintf.c (54)
+# 4 0x00007FF64EE0CF87 in D:\GitHub\Akinator\akin.exe: fprintf()
+# 5 0x00007FF64EDC1A97 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 6 0x00007FF64EDC1AB2 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 7 0x00007FF64EDC1AB2 in D:\GitHub\Akinator\akin.exe: Dump_in_line()
+# 8 0x00007FF64EDC1C0F in D:\GitHub\Akinator\akin.exe: Dump_akin()
+# 9 0x00007FF64EDC1529 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 13 2024 03:59:22, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 13 2024 20:08:37
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------

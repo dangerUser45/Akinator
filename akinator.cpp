@@ -4,26 +4,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <ctype.h>
 #include "akinator.h"
+#include "..\Processor\Onegin_for_proc\Onegin_processing.h"
+#include "..\Processor\Onegin_for_proc\Onegin_General.h"
+#include "..\Processor\Onegin_for_proc\Print.h"
 
-FILE* Log_File = 0;
-FILE* Graph_File = 0;
+
+extern FILE* Log_File;
+extern FILE* Graph_File;
+extern FILE* Graph_File_Utf8;
 
 //====================================================================================================================================
-int main ()
+int main (int argc, char* argv[])
 {
     Log_File = Create_file ("LOG_AKINATOR.html");
     fprintf (Log_File, "<pre>");
     //system ("mkdir Picture_tree");
 
+    ONEGIN onegin_data = {};
+    Check_argc (argc);
 
-    node_akntr* node_root = Create_node ("DEEEEEEEEEEEEEEEEED");
-    node_akntr* node_1 = Create_node ("ded_lox");
-    node_akntr* node_2 = Create_node ("danik_balbes");
-    node_akntr* node_3 = Create_node ("ded_kvadrober");
-    node_akntr* node_4 = Create_node ("ded_penisoed");
-    node_akntr* node_5 = Create_node ("ded_delaet_minet");
-    node_akntr* node_6 = Create_node ("ded_na_golove_omlet");
+    onegin_data.name = argv[1];
+    onegin_data.fsize = file_size (argv[1]);
+    Check_fsize (onegin_data.fsize);
+
+
+    Read_File (&onegin_data); 
+
+    Strings_Number (&onegin_data);
+    Address_String (&onegin_data);
+
+    DBG_Print (&onegin_data);
+
+    node_akntr* node_root = Create_node ("Êâàäðîáåð?");
+    node_akntr* node_1 = Create_node ("Äåä");
+    node_akntr* node_2 = Create_node ("Æèâîòíîå?");
+    node_akntr* node_3 = Create_node ("Íà ôèçòåõå?");
+    node_akntr* node_4 = Create_node ("Âåä¸ò ìàòàí?");
+    node_akntr* node_5 = Create_node ("Ñâèíüÿ");
+    node_akntr* node_6 = Create_node ("Îâ÷îñ");
 
     node_root -> left = node_1;
     Dump_akin (node_root, node_1);
@@ -31,23 +51,27 @@ int main ()
     node_root -> right = node_2;
     Dump_akin (node_root, node_2);
 
-    node_1 -> left = node_3;
+    node_2 -> left = node_3;
     Dump_akin (node_root, node_3);
 
-    node_3 -> right = node_4;
+    node_2 -> right = node_4;
     Dump_akin (node_root, node_4);
 
-    node_2 -> left = node_5;
+    node_3 -> left = node_5;
     Dump_akin (node_root, node_5);
 
-    node_2 -> right = node_6;
+    node_4 -> right = node_6;
     Dump_akin (node_root, node_6);
 
-    Close_File (Log_File);
+    //Insert_akinator (node_root);
+    Dump_akin (node_root, node_root);
+
+    $$ Close_File (Log_File);
     txDisableAutoPause ();
 
     return 0;
 }
+
 //====================================================================================================================================
 node_akntr* Create_node (el_t data)
 {
@@ -65,8 +89,7 @@ FILE* Create_file (const char* name_of_file)
 
     if (file == NULL)
     {
-        fprintf (stdout, "ÐÐµ ÑƒÐ´Ð°ÐµÑ‚ÑÑ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» %s", name_of_file);
-        perror (""); 
+        fprintf (stdout, "ERROR in open file\n %s", name_of_file);
         return 0;
     }
     
@@ -103,8 +126,8 @@ void Dump_graph_recursive (node_akntr* node, size_t rank)
         "\tnode_%p[ shape = \"Mrecord\", label = \"{ data = %"TYPE"\\n addr: %p | { L:\\n addr: %p |   R: \\n addr: %p } }\" ];\n", node -> left,  node -> left -> data, node -> left, node -> left -> left, node -> left -> right);
         fprintf (Graph_File, ""
         "\tnode_%p  -> node_%p;\n", node, node -> left);
-    }
-
+    } 
+    
     else {
         fprintf(Graph_File, "\n"
         "\t{\n"
@@ -153,7 +176,6 @@ void Dump_graph_recursive (node_akntr* node, size_t rank)
 
         Dump_graph_recursive (node -> left, rank);
         Dump_graph_recursive (node -> right, rank);
-
 }
 //====================================================================================================================================
 void Dump_in_line (node_akntr* node)
@@ -188,23 +210,33 @@ void Dump_graph_init (node_akntr* node, node_akntr* new_node)
 int Dump_akin (node_akntr* node, node_akntr* new_node)
 {
     Graph_File = Create_file ("Dot.txt");
+    Graph_File_Utf8 = Create_file ("Dot_UTF-8.txt");
+
     static size_t number_pic = 1;
     
     char* name_cmd = (char*) calloc (64, sizeof (char));
     char* name_pic = (char*) calloc (16, sizeof (char));
 
-    sprintf (name_cmd, "dot Dot.txt -Tpng -o tree_%zu.png", number_pic);
-    sprintf (name_pic, "tree_%zu.png", number_pic);
+    snprintf (name_cmd, 64, "dot Dot_UTF-8.txt -Tpng -o Picture_tree/tree_%zu.png", number_pic);
+    snprintf (name_pic, 16, "tree_%zu.png", number_pic);
 
     Dump_in_line (node);
     Dump_graph_init (node, new_node);
 
     Close_File (Graph_File);
+    Close_File (Graph_File_Utf8);
+
+    system ("D:/Ïðèëîæåíèÿ/iconv/gettext-iconv/bin/iconv.exe -f CP1251 -t UTF-8 Dot.txt > Dot_UTF-8.txt");
     system (name_cmd);
 
     fprintf (Log_File ,"\n<img src = \"Picture_tree/%s\" width = %d%%>\n\n\n\n\n\n\n\n\n\n", name_pic, SCALE);
     fflush (Graph_File);
     ++number_pic;
+
+    //fprintf (Log_File, "<b><font color = #b2b2b2><font size = \"7\"> _______________________________________________________________________________________________________________________________________________________________________\n</font size></font></b>");
+    //fprintf (Log_File, "<b><font color = #8080ff><font size = \"3\"> /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\n</font size></font></b>");
+    //fprintf (Log_File, "<b><font color = #b2b2b2><font size = \"7\"> ________________________________________________________________________________________________________________________________________________________________________\n</font size></font></b>");
+
     
     free (name_cmd);
     free (name_pic);
@@ -242,4 +274,66 @@ void Insert (node_akntr* node, el_t value)
     }
 }
 //====================================================================================================================================
-int 
+void Insert_akinator (node_akntr* node)
+{
+    if (!node) return;
+    char* object = (char*) calloc (256, sizeof (char));
+
+    printf ("Hello! Welcome to the akinator programm !\n"
+            "Enter the object you want to guess: ");
+
+    if ((scanf ("%s", object    )) != 1) {printf ("You put wrong data, try again...\n");}
+    getchar ();
+    if (strcmp (object, node -> data) == 0)
+    printf ("I guess your object ! It's %s !", node -> data);
+
+    node_akntr* new_node = 0;
+    if (!node) return;
+  
+    while (1)
+    {
+        printf ("That is %s ?\n", node -> data);
+        printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n");
+        char temp_str = 0; 
+        scanf ("%c", &temp_str);
+        getchar();
+
+        if (toupper (temp_str) == 'Y')
+        {
+            new_node = node -> left;
+            if (!new_node)
+            {
+                node -> left = Create_node (object);
+                return;
+            }
+            node = new_node;
+        }
+
+        else if (toupper (temp_str) == 'N')
+        {
+            new_node = node -> right; 
+            if (!new_node) 
+            {
+                node -> right = Create_node (object); 
+                return;
+            }
+            node = new_node;
+        } 
+
+        else 
+        {
+            printf ("Wrong, input, enter [Y] or [N]\n");
+            continue;
+        }
+    }
+}
+//====================================================================================================================================
+void Read3()
+{
+    FILE* Base = Create_file ("Base.txt");
+
+
+
+
+    Close_File (Base);
+}
