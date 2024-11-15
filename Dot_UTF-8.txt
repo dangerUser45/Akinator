@@ -4,36 +4,86 @@ digraph
 	node [ color = "#004b00", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
 	edge [ color = "#004b00", fontsize = 16];
 
-	node_000001f9d58290f0 [ shape = "Mrecord", label = "{ data =  \n addr: 000001f9d58290f0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	node_00000212c82a9170 [ shape = "Mrecord", label = "{ data = Akinator \n addr: 00000212c82a9170 | { L:\n addr: 00000212c82a9030 | R: \n addr: 00000212c82a90d0 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"1" ->  "2";
 	}
 
-	{ rank = 1; "1"; "node_000001f9d58290f0" }
+	{ rank = 1; "1"; "node_00000212c82a9170" }
 
-	{
-		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
-		edge [ color = "#007cff", fontsize = 16];
+	node_00000212c82a9030[ shape = "Mrecord", label = "{ data = YES_YES\n addr: 00000212c82a9030 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
+	node_00000212c82a9170  -> node_00000212c82a9030;
 
-		node_l_null_000001f9d58290f0[ shape = "ellipse", label = "null" ];
-		node_000001f9d58290f0  -> node_l_null_000001f9d58290f0;
-	}
-
-	{
-		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
-		edge [ color = "#007cff", fontsize = 16];
-
-		node_r_null_000001f9d58290f0 [shape = "ellipse", label = " null" ];
-		node_000001f9d58290f0  -> node_r_null_000001f9d58290f0;
-	}
+	node_00000212c82a90d0 [ shape = "Mrecord", label = " { data = grobik\n addr: 00000212c82a90d0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	node_00000212c82a9170  -> node_00000212c82a90d0;
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
 		edge[ color = "white"]
 		"1" ->  "2";
 	}
 
+	node_00000212c82a9030 [ shape = "Mrecord", label = "{ data = YES_YES \n addr: 00000212c82a9030 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	{
+		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
+		edge[ color = "white"]
+		"2" ->  "3";
+	}
 
-	node_000001f9d58290f0 [ fillcolor = "#ffa615"];
+	{ rank = 2; "2"; "node_00000212c82a9030" }
+
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_l_null_00000212c82a9030[ shape = "ellipse", label = "null" ];
+		node_00000212c82a9030  -> node_l_null_00000212c82a9030;
+	}
+
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_r_null_00000212c82a9030 [shape = "ellipse", label = " null" ];
+		node_00000212c82a9030  -> node_r_null_00000212c82a9030;
+	}
+	{
+		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
+		edge[ color = "white"]
+		"2" ->  "3";
+	}
+
+	node_00000212c82a90d0 [ shape = "Mrecord", label = "{ data = grobik \n addr: 00000212c82a90d0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	{
+		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
+		edge[ color = "white"]
+		"2" ->  "3";
+	}
+
+	{ rank = 2; "2"; "node_00000212c82a90d0" }
+
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_l_null_00000212c82a90d0[ shape = "ellipse", label = "null" ];
+		node_00000212c82a90d0  -> node_l_null_00000212c82a90d0;
+	}
+
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_r_null_00000212c82a90d0 [shape = "ellipse", label = " null" ];
+		node_00000212c82a90d0  -> node_r_null_00000212c82a90d0;
+	}
+	{
+		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
+		edge[ color = "white"]
+		"2" ->  "3";
+	}
+
+
+	node_00000212c82a9170 [ fillcolor = "#ffa615"];
 }

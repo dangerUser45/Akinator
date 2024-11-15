@@ -1,6 +1,12 @@
 #pragma once
 
+#define DEBUG 1
 
+#if  (DEBUG == 1) 
+    #define DBGAKN( ... ) __VA_ARGS__
+#else 
+    #define DBGAKN( ... )
+#endif
 
 FILE* Log_File = 0;
 FILE* Graph_File = 0;
@@ -31,7 +37,9 @@ void Insert (node_akntr* node, el_t value);
 void Insert_akinator (node_akntr* node);
 node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node_root);
 char* Skip_space (const char* ptr);
+void Print3 (node_akntr* node_root);
 
 #define TYPE "s"
 
 const int SCALE = 50;
+

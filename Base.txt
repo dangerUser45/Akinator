@@ -1,4 +1,10 @@
 { "Akinator"
-    { "Svinya"}
-    { ""}
-}
+    { "YES_YES"
+       {}
+       {}
+    }   
+    { "grobik"
+        {}
+        {}  
+    }
+} 
