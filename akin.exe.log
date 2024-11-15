@@ -1354,3 +1354,42 @@ Run file:	D:\GitHub\Akinator\akin.exe
 Directory:	D:\GitHub\Akinator
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF7E21174C8 (64-bit), Flags: Cmdre0, Thread: 0x3CD4 (Main), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7E1FAD139 in D:\GitHub\Akinator\akin.exe: TX::_txError()
+# 1 0x00007FF7E1FAD44B in D:\GitHub\Akinator\akin.exe: TX::_txOnSignal()
+# 2 0x00007FFEEBD9ADFB in C:\Windows\System32\msvcrt.dll: raise()
+# 3 0x00007FFEEBD9F1FB in C:\Windows\System32\msvcrt.dll: abort()
+# 4 0x00007FFEEBD9BBC5 in C:\Windows\System32\msvcrt.dll: assert()
+# 5 0x00007FF7E1FA1B68 in D:\GitHub\Akinator\akin.exe: Dump_akin()
+# 6 0x00007FF7E1FA155F in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 15 2024 18:08:51, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 15 2024 18:55:05
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------

@@ -5,10 +5,10 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <ctype.h>
-#include "akinator.h"
 #include "..\Processor\Onegin_for_proc\Onegin_processing.h"
 #include "..\Processor\Onegin_for_proc\Onegin_General.h"
 #include "..\Processor\Onegin_for_proc\Print.h"
+#include "akinator.h"
 
 
 extern FILE* Log_File;
@@ -29,15 +29,14 @@ int main (int argc, char* argv[])
     onegin_data.fsize = file_size (argv[1]);
     Check_fsize (onegin_data.fsize);
 
-
     Read_File (&onegin_data); 
 
-    Strings_Number (&onegin_data);
-    Address_String (&onegin_data);
+    //Strings_Number (&onegin_data);
+    //Address_String (&onegin_data);
 
     DBG_Print (&onegin_data);
 
-    node_akntr* node_root = Create_node ("Квадробер?");
+    /*node_akntr* node_root = Create_node ("Квадробер?");
     node_akntr* node_1 = Create_node ("Дед");
     node_akntr* node_2 = Create_node ("Животное?");
     node_akntr* node_3 = Create_node ("На физтехе?");
@@ -64,14 +63,23 @@ int main (int argc, char* argv[])
     Dump_akin (node_root, node_6);
 
     //Insert_akinator (node_root);
+    Dump_akin (node_root, node_root);*/
+
+    node_akntr* node_root = 0;
+
+    Read3 (&onegin_data, argv[1], &node_root);
+    $(node_root);
+    Dump_akin (node_root, node_root);
     Dump_akin (node_root, node_root);
 
-    $$ Close_File (Log_File);
+
+    Close_File (Log_File);
     txDisableAutoPause ();
+
+    DBG_Print (&onegin_data);
 
     return 0;
 }
-
 //====================================================================================================================================
 node_akntr* Create_node (el_t data)
 {
@@ -209,16 +217,20 @@ void Dump_graph_init (node_akntr* node, node_akntr* new_node)
 //====================================================================================================================================
 int Dump_akin (node_akntr* node, node_akntr* new_node)
 {
+    if (!node) return 1;
+    assert (new_node);
+
     Graph_File = Create_file ("Dot.txt");
     Graph_File_Utf8 = Create_file ("Dot_UTF-8.txt");
 
     static size_t number_pic = 1;
     
+    
     char* name_cmd = (char*) calloc (64, sizeof (char));
     char* name_pic = (char*) calloc (16, sizeof (char));
 
-    snprintf (name_cmd, 64, "dot Dot_UTF-8.txt -Tpng -o Picture_tree/tree_%zu.png", number_pic);
-    snprintf (name_pic, 16, "tree_%zu.png", number_pic);
+    snprintf (name_cmd, 64, "dot Dot_UTF-8.txt -Tsvg -o Picture_tree/tree_%zu.svg", number_pic);
+    snprintf (name_pic, 16, "tree_%zu.svg", number_pic);
 
     Dump_in_line (node);
     Dump_graph_init (node, new_node);
@@ -231,6 +243,7 @@ int Dump_akin (node_akntr* node, node_akntr* new_node)
 
     fprintf (Log_File ,"\n<img src = \"Picture_tree/%s\" width = %d%%>\n\n\n\n\n\n\n\n\n\n", name_pic, SCALE);
     fflush (Graph_File);
+    $(number_pic);
     ++number_pic;
 
     //fprintf (Log_File, "<b><font color = #b2b2b2><font size = \"7\"> _______________________________________________________________________________________________________________________________________________________________________\n</font size></font></b>");
@@ -328,12 +341,67 @@ void Insert_akinator (node_akntr* node)
     }
 }
 //====================================================================================================================================
-void Read3()
+node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node_root)
 {
-    FILE* Base = Create_file ("Base.txt");
+    assert (onegin);
+    assert (name_base_file);
+    static size_t counter = 1;
 
+    if (onegin -> buffer_addr[0] != '{')
+        return 0;
 
+    else
+    {   
+        printf ("onegin -> buffer_addr[0] = <%c>\n", onegin -> buffer_addr[0]);
+        onegin -> buffer_addr = Skip_space (onegin -> buffer_addr);
+        printf ("onegin -> buffer_addr[0] = <%c>\n", onegin -> buffer_addr[0]);
+        if (*onegin -> buffer_addr != '\"'){
+            printf ("here\n");
+            return 0;}  
+        else
+        {
+            printf ("QWA QWA QWA\n");
+            char* addr_cavich = strchr (onegin -> buffer_addr, '\"');         //addr '" Qvadrober' 
 
+            if (addr_cavich != NULL)
+            {
+                onegin -> buffer_addr = addr_cavich + 1;                      //addr buff == Q
+                printf ("%c\n",  onegin -> buffer_addr[0]);
 
-    Close_File (Base);
+                char* addr_cavich_end = strchr (onegin -> buffer_addr, '\"');
+                printf ("%c\n",  *(addr_cavich_end - 1));
+
+                *addr_cavich_end = '\0';                                         //'..er \0'
+                $(*addr_cavich) ;
+                node_akntr* node = Create_node (addr_cavich + 1);
+                fprintf (Log_File, "Я добавил узел: %s\n", addr_cavich + 1);
+                printf ("%s\n", addr_cavich + 1);
+
+                onegin -> buffer_addr = addr_cavich_end + 1;
+                onegin -> buffer_addr = Skip_space (onegin -> buffer_addr);
+
+                $(onegin -> buffer_addr[0]);
+
+                node -> left  = Read3 (onegin, name_base_file, node_root);
+                node -> right = Read3 (onegin, name_base_file, node_root);
+
+                if (counter == 1) *node_root = node;
+                $(counter);
+                
+                ++counter;
+                return node;
+            }
+        }
+    }
+}     
+//====================================================================================================================================
+char*   Skip_space (const char* ptr) 
+{
+    ++ptr;
+    while (1)
+        if (*ptr == ' ' || *ptr == '\r' || *ptr == '\n')
+            ++ptr;
+        else break;
+    
+    return (char*) ptr;
 }

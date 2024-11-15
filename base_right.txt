@@ -1,0 +1,25 @@
+{ "Qvadrober"   
+    { "Ded"
+        {}
+        { "Itsa"
+            {} 
+            {}
+        }
+    }
+    { "Zhivitnoe"
+        { "Na phistexe"
+            { "Svinya"
+                {}
+                {}
+            }
+            {}
+        }
+        { "Vedet matan"
+            {}
+            { "Ovchos"
+                {}
+                {}
+            }
+        }       
+    }
+}

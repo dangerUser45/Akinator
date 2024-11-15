@@ -29,9 +29,9 @@ FILE* Close_File (FILE* file);
 int Dump_akin (node_akntr* node, node_akntr* new_node);
 void Insert (node_akntr* node, el_t value);
 void Insert_akinator (node_akntr* node);
-void Read3 ();
+node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node_root);
+char* Skip_space (const char* ptr);
 
 #define TYPE "s"
 
 const int SCALE = 50;
-
