@@ -4,74 +4,74 @@ digraph
 	node [ color = "#004b00", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
 	edge [ color = "#004b00", fontsize = 16];
 
-	node_00000212e1af91f0 [ shape = "Mrecord", label = "{ data = Qvadrober \n addr: 00000212e1af91f0 | { L:\n addr: 00000212e1af9210 | R: \n addr: 00000212e1af9270 } }" ];
+	node_00000206e0f39350 [ shape = "Mrecord", label = "{ data = Akinator \n addr: 00000206e0f39350 | { L:\n addr: 00000206e0f38fd0 | R: \n addr: 00000206e0f39070 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"1" ->  "2";
 	}
 
-	{ rank = 1; "1"; "node_00000212e1af91f0" }
+	{ rank = 1; "1"; "node_00000206e0f39350" }
 
-	node_00000212e1af9210[ shape = "Mrecord", label = "{ data = Ded\n addr: 00000212e1af9210 | { L:\n addr: 0000000000000000 |   R: \n addr: 00000212e1af9250 } }" ];
-	node_00000212e1af91f0  -> node_00000212e1af9210;
+	node_00000206e0f38fd0[ shape = "Mrecord", label = "{ data = YES_YES\n addr: 00000206e0f38fd0 | { L:\n addr: 00000206e0f38ff0 |   R: \n addr: 0000000000000000 } }" ];
+	node_00000206e0f39350  -> node_00000206e0f38fd0;
 
-	node_00000212e1af9270 [ shape = "Mrecord", label = " { data = Zhivitnoe\n addr: 00000212e1af9270 | { L:\n addr: 00000212e1af92b0 | R: \n addr: 00000212e1af9010 } }" ];
-	node_00000212e1af91f0  -> node_00000212e1af9270;
+	node_00000206e0f39070 [ shape = "Mrecord", label = " { data = Skibidi dob dob yes yes\n addr: 00000206e0f39070 | { L:\n addr: 00000206e0f39030 | R: \n addr: 00000206e0f39130 } }" ];
+	node_00000206e0f39350  -> node_00000206e0f39070;
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
 		edge[ color = "white"]
 		"1" ->  "2";
 	}
 
-	node_00000212e1af9210 [ shape = "Mrecord", label = "{ data = Ded \n addr: 00000212e1af9210 | { L:\n addr: 0000000000000000 | R: \n addr: 00000212e1af9250 } }" ];
+	node_00000206e0f38fd0 [ shape = "Mrecord", label = "{ data = YES_YES \n addr: 00000206e0f38fd0 | { L:\n addr: 00000206e0f38ff0 | R: \n addr: 0000000000000000 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"2" ->  "3";
 	}
 
-	{ rank = 2; "2"; "node_00000212e1af9210" }
+	{ rank = 2; "2"; "node_00000206e0f38fd0" }
+
+	node_00000206e0f38ff0[ shape = "Mrecord", label = "{ data = Eto zhe azamat\n addr: 00000206e0f38ff0 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
+	node_00000206e0f38fd0  -> node_00000206e0f38ff0;
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_l_null_00000212e1af9210[ shape = "ellipse", label = "null" ];
-		node_00000212e1af9210  -> node_l_null_00000212e1af9210;
+		node_r_null_00000206e0f38fd0 [shape = "ellipse", label = " null" ];
+		node_00000206e0f38fd0  -> node_r_null_00000206e0f38fd0;
 	}
-
-	node_00000212e1af9250 [ shape = "Mrecord", label = " { data = Itsa\n addr: 00000212e1af9250 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
-	node_00000212e1af9210  -> node_00000212e1af9250;
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
 		edge[ color = "white"]
 		"2" ->  "3";
 	}
 
-	node_00000212e1af9250 [ shape = "Mrecord", label = "{ data = Itsa \n addr: 00000212e1af9250 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	node_00000206e0f38ff0 [ shape = "Mrecord", label = "{ data = Eto zhe azamat \n addr: 00000206e0f38ff0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"3" ->  "4";
 	}
 
-	{ rank = 3; "3"; "node_00000212e1af9250" }
+	{ rank = 3; "3"; "node_00000206e0f38ff0" }
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_l_null_00000212e1af9250[ shape = "ellipse", label = "null" ];
-		node_00000212e1af9250  -> node_l_null_00000212e1af9250;
+		node_l_null_00000206e0f38ff0[ shape = "ellipse", label = "null" ];
+		node_00000206e0f38ff0  -> node_l_null_00000206e0f38ff0;
 	}
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_r_null_00000212e1af9250 [shape = "ellipse", label = " null" ];
-		node_00000212e1af9250  -> node_r_null_00000212e1af9250;
+		node_r_null_00000206e0f38ff0 [shape = "ellipse", label = " null" ];
+		node_00000206e0f38ff0  -> node_r_null_00000206e0f38ff0;
 	}
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
@@ -79,44 +79,49 @@ digraph
 		"3" ->  "4";
 	}
 
-	node_00000212e1af9270 [ shape = "Mrecord", label = "{ data = Zhivitnoe \n addr: 00000212e1af9270 | { L:\n addr: 00000212e1af92b0 | R: \n addr: 00000212e1af9010 } }" ];
+	node_00000206e0f39070 [ shape = "Mrecord", label = "{ data = Skibidi dob dob yes yes \n addr: 00000206e0f39070 | { L:\n addr: 00000206e0f39030 | R: \n addr: 00000206e0f39130 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"2" ->  "3";
 	}
 
-	{ rank = 2; "2"; "node_00000212e1af9270" }
+	{ rank = 2; "2"; "node_00000206e0f39070" }
 
-	node_00000212e1af92b0[ shape = "Mrecord", label = "{ data = Na phistexe\n addr: 00000212e1af92b0 | { L:\n addr: 00000212e1af9330 |   R: \n addr: 0000000000000000 } }" ];
-	node_00000212e1af9270  -> node_00000212e1af92b0;
+	node_00000206e0f39030[ shape = "Mrecord", label = "{ data = Sonya topi\n addr: 00000206e0f39030 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
+	node_00000206e0f39070  -> node_00000206e0f39030;
 
-	node_00000212e1af9010 [ shape = "Mrecord", label = " { data = Vedet matan\n addr: 00000212e1af9010 | { L:\n addr: 0000000000000000 | R: \n addr: 00000212e1af8ff0 } }" ];
-	node_00000212e1af9270  -> node_00000212e1af9010;
+	node_00000206e0f39130 [ shape = "Mrecord", label = " { data = Nastya_topi\n addr: 00000206e0f39130 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	node_00000206e0f39070  -> node_00000206e0f39130;
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
 		edge[ color = "white"]
 		"2" ->  "3";
 	}
 
-	node_00000212e1af92b0 [ shape = "Mrecord", label = "{ data = Na phistexe \n addr: 00000212e1af92b0 | { L:\n addr: 00000212e1af9330 | R: \n addr: 0000000000000000 } }" ];
+	node_00000206e0f39030 [ shape = "Mrecord", label = "{ data = Sonya topi \n addr: 00000206e0f39030 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"3" ->  "4";
 	}
 
-	{ rank = 3; "3"; "node_00000212e1af92b0" }
-
-	node_00000212e1af9330[ shape = "Mrecord", label = "{ data = Svinya\n addr: 00000212e1af9330 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
-	node_00000212e1af92b0  -> node_00000212e1af9330;
+	{ rank = 3; "3"; "node_00000206e0f39030" }
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_r_null_00000212e1af92b0 [shape = "ellipse", label = " null" ];
-		node_00000212e1af92b0  -> node_r_null_00000212e1af92b0;
+		node_l_null_00000206e0f39030[ shape = "ellipse", label = "null" ];
+		node_00000206e0f39030  -> node_l_null_00000206e0f39030;
+	}
+
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_r_null_00000206e0f39030 [shape = "ellipse", label = " null" ];
+		node_00000206e0f39030  -> node_r_null_00000206e0f39030;
 	}
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
@@ -124,91 +129,36 @@ digraph
 		"3" ->  "4";
 	}
 
-	node_00000212e1af9330 [ shape = "Mrecord", label = "{ data = Svinya \n addr: 00000212e1af9330 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
-	{
-		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
-		edge[ color = "white"]
-		"4" ->  "5";
-	}
-
-	{ rank = 4; "4"; "node_00000212e1af9330" }
-
-	{
-		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
-		edge [ color = "#007cff", fontsize = 16];
-
-		node_l_null_00000212e1af9330[ shape = "ellipse", label = "null" ];
-		node_00000212e1af9330  -> node_l_null_00000212e1af9330;
-	}
-
-	{
-		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
-		edge [ color = "#007cff", fontsize = 16];
-
-		node_r_null_00000212e1af9330 [shape = "ellipse", label = " null" ];
-		node_00000212e1af9330  -> node_r_null_00000212e1af9330;
-	}
-	{
-		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
-		edge[ color = "white"]
-		"4" ->  "5";
-	}
-
-	node_00000212e1af9010 [ shape = "Mrecord", label = "{ data = Vedet matan \n addr: 00000212e1af9010 | { L:\n addr: 0000000000000000 | R: \n addr: 00000212e1af8ff0 } }" ];
+	node_00000206e0f39130 [ shape = "Mrecord", label = "{ data = Nastya_topi \n addr: 00000206e0f39130 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"3" ->  "4";
 	}
 
-	{ rank = 3; "3"; "node_00000212e1af9010" }
+	{ rank = 3; "3"; "node_00000206e0f39130" }
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_l_null_00000212e1af9010[ shape = "ellipse", label = "null" ];
-		node_00000212e1af9010  -> node_l_null_00000212e1af9010;
+		node_l_null_00000206e0f39130[ shape = "ellipse", label = "null" ];
+		node_00000206e0f39130  -> node_l_null_00000206e0f39130;
 	}
 
-	node_00000212e1af8ff0 [ shape = "Mrecord", label = " { data = Ovchos\n addr: 00000212e1af8ff0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
-	node_00000212e1af9010  -> node_00000212e1af8ff0;
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_r_null_00000206e0f39130 [shape = "ellipse", label = " null" ];
+		node_00000206e0f39130  -> node_r_null_00000206e0f39130;
+	}
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
 		edge[ color = "white"]
 		"3" ->  "4";
 	}
 
-	node_00000212e1af8ff0 [ shape = "Mrecord", label = "{ data = Ovchos \n addr: 00000212e1af8ff0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
-	{
-		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
-		edge[ color = "white"]
-		"4" ->  "5";
-	}
 
-	{ rank = 4; "4"; "node_00000212e1af8ff0" }
-
-	{
-		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
-		edge [ color = "#007cff", fontsize = 16];
-
-		node_l_null_00000212e1af8ff0[ shape = "ellipse", label = "null" ];
-		node_00000212e1af8ff0  -> node_l_null_00000212e1af8ff0;
-	}
-
-	{
-		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
-		edge [ color = "#007cff", fontsize = 16];
-
-		node_r_null_00000212e1af8ff0 [shape = "ellipse", label = " null" ];
-		node_00000212e1af8ff0  -> node_r_null_00000212e1af8ff0;
-	}
-	{
-		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
-		edge[ color = "white"]
-		"4" ->  "5";
-	}
-
-
-	node_00000212e1af91f0 [ fillcolor = "#ffa615"];
+	node_00000206e0f39350 [ fillcolor = "#ffa615"];
 }

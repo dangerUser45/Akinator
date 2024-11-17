@@ -1,10 +1,19 @@
 { "Akinator"
-    { "YES_YES"
-       {}
-       {}
-    }   
-    { "Skibidi dob dob yes yes"
-        {"Sonya topi"}
-        {"Nastya_topi"}  
-    }
-} 
+	{ "YES_YES"
+		{ "Eto zhe azamat"
+			{}
+			{}
+		}
+		{}
+	}
+	{ "Skibidi dob dob yes yes"
+		{ "Sonya topi"
+			{}
+			{}
+		}
+		{ "Nastya_topi"
+			{}
+			{}
+		}
+	}
+}

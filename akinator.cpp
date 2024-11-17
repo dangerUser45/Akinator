@@ -17,6 +17,8 @@ extern FILE* Graph_File_Utf8;
 extern FILE* Base_File;
 
 //====================================================================================================================================
+#define node_root *(Akin_data -> root_node)
+
 int main (int argc, char* argv[])
 {
     /*Log_File = Create_file ("LOG_AKINATOR.html");
@@ -30,22 +32,24 @@ int main (int argc, char* argv[])
     Check_fsize (onegin_data.fsize);
     Read_File (&onegin_data); 
     DBG_Print (&onegin_data);*/
-
     akinator* Akin_data = Akin_init (argc, argv);
+    node_akntr* node_null = *(Akin_data -> root_node);
 
-    
-    Read3 (Akin_data -> onegin_data, argv[1], &node_root);
-    Dump_akin (node_root, node_root);
+    Read3 (Akin_data -> onegin_data, argv[1], &node_null);
+    Dump_akin (node_null, node_null);
 
     Base_File = Create_file (argv[1]);
-    Print3 (node_root);
+    Print3 (node_null);
 
     Close_File (Log_File);
+    Close_File (Base_File);
+    Free_akin (Akin_data);
     txDisableAutoPause ();
-
 
     return 0;
 }
+
+#undef node_root
 //====================================================================================================================================
 node_akntr* Create_node (el_t data)
 {
@@ -377,8 +381,9 @@ node_akntr* Print3 (node_akntr* node)
     if (! node) return 0;
     fprintf (Base_File, "{ ");
     fprintf (Base_File, "\"%"TYPE"\"\n", node -> data); 
+
     ++cnt;
-                                                                                                                                                                                                
+
     if (!node -> left) { PT; fprintf (Base_File, "{}\n"); }
     else  { PT; Print3 (node -> left); }
 
@@ -398,3 +403,17 @@ void Print_tab (size_t cnt, FILE* file_ptr)
     for (size_t i = 0; i < cnt; ++i)
         fprintf (file_ptr, "\t");
 }
+//====================================================================================================================================
+void Free_akin (akinator* akin_data)
+{
+    assert (akin_data);
+    printf ("akin_data -> root_node = %p\n", akin_data -> root_node   );
+    printf ("*(akin_data -> root_node) = %p\n", *(akin_data -> root_node));
+    printf ("akin_data -> root_node[0] = %p\n", akin_data -> root_node[0]);
+
+    free (akin_data -> onegin_data);
+    free (akin_data);
+
+    return;
+}
+//====================================================================================================================================

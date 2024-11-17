@@ -8,11 +8,6 @@
     #define DBGAKN( ... )
 #endif
 
-FILE* Log_File = 0;
-FILE* Graph_File = 0;
-FILE* Graph_File_Utf8 = 0;
-FILE* Base_File;
-
 typedef const char* el_t;    
 
 struct node_akntr
@@ -43,8 +38,13 @@ node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node
 char* Skip_space (const char* ptr);
 node_akntr* Print3 (node_akntr* node);
 void Print_tab (size_t cnt, FILE* file_ptr);
+void Free_akin (akinator* akin_data);
+
 
 #define TYPE "s"
 
 const int SCALE = 50;
 
+
+//TODO fix all free
+// 
