@@ -11,6 +11,7 @@
 FILE* Log_File = 0;
 FILE* Graph_File = 0;
 FILE* Graph_File_Utf8 = 0;
+FILE* Base_File;
 
 typedef const char* el_t;    
 
@@ -23,9 +24,12 @@ struct node_akntr
 
 struct akinator
 {
-    el_t* root_node;
+    node_akntr** root_node;
+    ONEGIN* onegin_data;
+    FILE* base;
 };
 
+akinator* Akin_init (int argc, char* argv[]);
 FILE*  Create_file (const char* name_of_file);
 node_akntr* Create_node (el_t data);
 void Dump_graph_init (node_akntr* node, node_akntr* new_node);
@@ -37,7 +41,8 @@ void Insert (node_akntr* node, el_t value);
 void Insert_akinator (node_akntr* node);
 node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node_root);
 char* Skip_space (const char* ptr);
-void Print3 (node_akntr* node_root);
+node_akntr* Print3 (node_akntr* node);
+void Print_tab (size_t cnt, FILE* file_ptr);
 
 #define TYPE "s"
 

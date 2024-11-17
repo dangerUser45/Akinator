@@ -14,7 +14,7 @@
 			}
 			{}
 		}
-		{ "Vedet mtan"
+		{ "Vedet matan"
 			{}
 			{ "Ovchos"
 				{}

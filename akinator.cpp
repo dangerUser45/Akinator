@@ -14,13 +14,13 @@
 extern FILE* Log_File;
 extern FILE* Graph_File;
 extern FILE* Graph_File_Utf8;
+extern FILE* Base_File;
 
 //====================================================================================================================================
 int main (int argc, char* argv[])
 {
-    Log_File = Create_file ("LOG_AKINATOR.html");
+    /*Log_File = Create_file ("LOG_AKINATOR.html");
     fprintf (Log_File, "<pre>");
-    //system ("mkdir Picture_tree");
 
     ONEGIN onegin_data = {};
     Check_argc (argc);
@@ -29,16 +29,16 @@ int main (int argc, char* argv[])
     onegin_data.fsize = file_size (argv[1]);
     Check_fsize (onegin_data.fsize);
     Read_File (&onegin_data); 
-    DBG_Print (&onegin_data);
+    DBG_Print (&onegin_data);*/
 
+    akinator* Akin_data = Akin_init (argc, argv);
 
-    node_akntr* node_root = 0;
-
-    Read3 (&onegin_data, argv[1], &node_root);
+    
+    Read3 (Akin_data -> onegin_data, argv[1], &node_root);
     Dump_akin (node_root, node_root);
 
-
-
+    Base_File = Create_file (argv[1]);
+    Print3 (node_root);
 
     Close_File (Log_File);
     txDisableAutoPause ();
@@ -300,7 +300,7 @@ void Insert_akinator (node_akntr* node)
 
         else 
         {
-            printf ("Wrong, input, enter [Y] or [N]\n");
+            printf ("Wrong input, enter [Y] or [N]\n");
             continue;
         }
     }
@@ -362,7 +362,7 @@ node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node
 char* Skip_space (const char* ptr) 
 {
     while (1)
-        if (*ptr == ' ' || *ptr == '\r' || *ptr == '\n')
+        if (*ptr == ' ' || *ptr == '\t' || *ptr == '\r' || *ptr == '\n' )
             ++ptr;
         else break;
     
@@ -371,14 +371,30 @@ char* Skip_space (const char* ptr)
 //====================================================================================================================================
 node_akntr* Print3 (node_akntr* node)
 {
-    if (! node) return;
-    fprintf (Log_File, "{ ");
-    fprintf (Log_File, "%s\n" TYPE, node -> data);
+    #define PT Print_tab (cnt, Base_File)
 
-    if (node -> left) Dump_in_line (node -> left);
-    if (node -> right) Dump_in_line (node -> right);
-   
-    fprintf (Log_File, ")");
+    static size_t cnt = 0;
+    if (! node) return 0;
+    fprintf (Base_File, "{ ");
+    fprintf (Base_File, "\"%"TYPE"\"\n", node -> data); 
+    ++cnt;
+                                                                                                                                                                                                
+    if (!node -> left) { PT; fprintf (Base_File, "{}\n"); }
+    else  { PT; Print3 (node -> left); }
 
+    if (!node -> right) {PT; fprintf (Base_File, "{}\n"); }
+    else { PT; Print3 (node -> right); } 
 
+    --cnt;
+    PT; fprintf (Base_File, "}\n");
+
+    return 0;
+
+    #undef PT
+}
+//====================================================================================================================================
+void Print_tab (size_t cnt, FILE* file_ptr)
+{
+    for (size_t i = 0; i < cnt; ++i)
+        fprintf (file_ptr, "\t");
 }
