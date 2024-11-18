@@ -1,25 +1,25 @@
-{ "Qvadrober"   
-    { "Ded"
-        {}
-        { "Itsa"
-            {} 
-            {}
-        }
-    }
-    { "Zhivitnoe"
-        { "Na phistexe"
-            { "Svinya"
-                {}
-                {}
-            }
-            {}
-        }
-        { "Vedet matan"
-            {}
-            { "Ovchos"
-                {}
-                {}
-            }
-        }       
-    }
+{ "Qvadrober"
+	{ "Ded"
+		{}
+		{ "Itsa"
+			{}
+			{}
+		}
+	}
+	{ "Zhivitnoe"
+		{ "Na phistexe"
+			{ "Svinya"
+				{}
+				{}
+			}
+			{}
+		}
+		{ "Vedet akinator"
+			{}
+			{ "Ovchos"
+				{}
+				{}
+			}
+		}
+	}
 }

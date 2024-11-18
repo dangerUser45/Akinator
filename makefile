@@ -3,23 +3,31 @@ B = build_akinator/
 
 #-----------------------------------------------------------------------
 
-akin :           $(B)akinator.o $(B)Akinator_init.o $(B)Processing.o $(B)Print.o $(B)TXLib.o  
-	$(Compiler)  $(B)akinator.o $(B)Akinator_init.o $(B)Processing.o $(B)Print.o $(B)TXLib.o -o akin.exe
+akin :           $(B)akinator.o $(B)Akinator_main.o $(B)Akinator_init.o $(B)Processing.o $(B)Print.o $(B)TXLib.o  
+	$(Compiler)  $(B)akinator.o $(B)Akinator_main.o $(B)Akinator_init.o $(B)Processing.o $(B)Print.o $(B)TXLib.o -o akin.exe
 #-----------------------------------------------------------------------
 
-$(B)akinator.o : akinator.cpp \
-				 akinator.h
+$(B)akinator.o : akinator.cpp                                     \
+				 akinator.h                                       \
+				 ..\Processor\Onegin_for_proc\Onegin_processing.h \
+				 ..\Processor\Onegin_for_proc\Onegin_processing.h \
+				 ..\Processor\Onegin_for_proc\Print.h
 	$(Compiler) -c akinator.cpp -o $(B)akinator.o
 
+$(B)Akinator_main.o : Akinator_main.cpp                             \
+                      akinator.h                                    \
+                      ..\Processor\Onegin_for_proc\Onegin_General.h
+	$(Compiler) -c Akinator_main.cpp -o $(B)Akinator_main.o
+
 $(B)Akinator_init.o : akinator_init.cpp                                \
+					  akinator.h                                       \
 				      ..\Processor\Onegin_for_proc\Onegin_processing.h \
 					  ..\Processor\Onegin_for_proc\Onegin_General.h    \
-					  ..\Processor\Onegin_for_proc\Print.h             \
-					  akinator.h
+					  ..\Processor\Onegin_for_proc\Print.h             
 	$(Compiler) -c akinator_init.cpp -o $(B)Akinator_init.o
 
-$(B)Print.o : ../Processor/Onegin_for_proc/Print.cpp                          \
-		      ../Processor/Onegin_for_proc/Onegin_General.h                   \
+$(B)Print.o : ../Processor/Onegin_for_proc/Print.cpp                        \
+		      ../Processor/Onegin_for_proc/Onegin_General.h                 \
 			  ../Processor/Onegin_for_proc/Print.h
 	$(Compiler) -c  ../Processor/Onegin_for_proc/print.cpp -o $(B)print.o
 

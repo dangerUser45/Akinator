@@ -18,19 +18,23 @@ char*  Skip_space (const char* ptr)
 
 int main()
 {
-    char* str = (char*) calloc (16, sizeof (char));
+    int val = 0;
 
-    if (!str) printf ("error\n");
-    assert (str);
-    printf ("addr = %lld" ,str);
-    str[0] = 'Q';
-    printf ("%c\n", str[0]);
-    printf ("Hello %c   \n", str[0]);
+    scanf("%d", &val);
+    while (1)
+    {
+        printf ("here\n");
+        switch (val)
+        {
+            case 1:
+                continue;
 
-    sprintf (str, "%s\n", "Q   WE    RTY");
-    printf ("%s", str);
+            case 2:
+                printf ("ura ura ura\n");
+                break;
+        }
 
-    char* str_s = Skip_space (str);
-    printf ("str_s = %lld", str_s);
+    }
+    
 
 }

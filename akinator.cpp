@@ -17,31 +17,6 @@ extern FILE* Graph_File_Utf8;
 extern FILE* Base_File; 
 
 //====================================================================================================================================
-int main (int argc, char* argv[])
-{
-    /*Log_File = Create_file ("LOG_AKINATOR.html");
-    fprintf (Log_File, "<pre>");
-
-    ONEGIN onegin_data = {};
-    Check_argc (argc);
-
-    onegin_data.name = argv[1];
-    onegin_data.fsize = file_size (argv[1]);
-    Check_fsize (onegin_data.fsize);
-    Read_File (&onegin_data); 
-    DBG_Print (&onegin_data);*/
-    akinator* Akin_data = Akin_init (argc, argv);
-    node_akntr* node_null = *(Akin_data -> root_node);
-
-    Read3 (Akin_data -> onegin_data, argv[1], &node_null);
-    Dump_akin (node_null, node_null);
-
-    Base_File = Create_file (argv[1]);
-    Print3 (node_null);
-
-    Dtor_akin (Akin_Data);
-}
-//====================================================================================================================================
 node_akntr* Create_node (el_t data)
 {
     node_akntr* new_node = (node_akntr*) calloc (1, sizeof (node_akntr));
@@ -67,10 +42,10 @@ FILE* Create_file (const char* name_of_file)
     return file;
 }
 //====================================================================================================================================
-FILE* Close_File (FILE* file)
+void Close_File (FILE* file)
 {
     if (file) fclose (file); 
-    return file;
+    return;
 }
 //====================================================================================================================================
 void Dump_graph_recursive (node_akntr* node, size_t rank)
@@ -247,58 +222,102 @@ void Insert (node_akntr* node, el_t value)
     }
 }
 //====================================================================================================================================
-void Insert_akinator (node_akntr* node)
+void Run_akinator (node_akntr* node)
 {
     if (!node) return;
+
+    printf ("\t\tHello! Welcome to the akinator programm !\n"
+            "\t\tWhat do you want to do?\n"
+            "\t\t\t\tEnter :\n" 
+            "\t\t[guess]    - start guessing\n"
+            "\t\t[compare]  - compare two objects\n"
+            "\t\t[define]   - define an object\n"
+            "\t\t[exit]     - programm exit\n");    
+    
+    char* temp_str = (char*) calloc (256, sizeof (char));
+
+    while (true)
+    {
+        scanf  ("%s", temp_str);
+        int action = Check_input_akin (temp_str);
+
+        switch (action)
+        {
+            case GUESS:
+                Guess_Akin (node);
+                break;
+            
+            case COMPARE:
+                //Compare_Akin ();
+                break;
+
+            case DEFINITION:
+                //Definition_Akin ();
+                break;
+
+            case EXIT_AKIN:
+                exit (0);
+        
+            case 0:
+                continue;
+                
+            default:
+                fprintf (Log_File, "ERROR IN Play_akinator(): line %d", __LINE__);
+                break;
+        }
+    }
+
+    free (temp_str);
+}
+//====================================================================================================================================
+void Guess_Akin (node_akntr* node_root)
+{
+    node_akntr* node = node_root;
+    printf ("Guess any object and I will try to guess it !\n");
+    node_akntr* new_node = 0;
+    char temp_str [40];
     char* object = (char*) calloc (256, sizeof (char));
 
-    printf ("Hello! Welcome to the akinator programm !\n"
-            "Enter the object you want to guess: ");
-
-    if ((scanf ("%s", object    )) != 1) {printf ("You put wrong data, try again...\n");}
-    getchar ();
-    if (strcmp (object, node -> data) == 0)
-    printf ("I guess your object ! It's %s !", node -> data);
-
-    node_akntr* new_node = 0;
-    if (!node) return;
-  
     while (1)
     {
         printf ("That is %s ?\n", node -> data);
-        printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n");
-        char temp_str = 0; 
-        scanf ("%c", &temp_str);
-        getchar();
+        printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n"); 
+        scanf ("%s", temp_str);
+        int input = Check_input_akin (temp_str);
 
-        if (toupper (temp_str) == 'Y')
+        switch (input)
         {
-            new_node = node -> left;
-            if (!new_node)
-            {
-                node -> left = Create_node (object);
-                return;
-            }
-            node = new_node;
+            case YES:
+                {
+                    new_node = node -> left;
+                    if (!new_node)
+                    {
+                        node -> left = Create_node (object);
+                        return;
+                    }
+                    node = new_node;
+                }
+
+            case NO:
+                {
+                    new_node = node -> right; 
+                    if (!new_node) 
+                    {
+                        node -> right = Create_node (object); 
+                        return;
+                    }
+                    node = new_node;
+                } 
+
+            default:
+                {
+                    printf ("Wrong input, enter [Y] or [N]\n");
+                    continue;
+                }
         }
 
-        else if (toupper (temp_str) == 'N')
-        {
-            new_node = node -> right; 
-            if (!new_node) 
-            {
-                node -> right = Create_node (object); 
-                return;
-            }
-            node = new_node;
-        } 
-
-        else 
-        {
-            printf ("Wrong input, enter [Y] or [N]\n");
-            continue;
-        }
     }
+    free (object);
 }
 //====================================================================================================================================
 node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node_root)
@@ -408,10 +427,49 @@ void Free_akin (akinator* Akin_data)
     return;
 }
 //====================================================================================================================================
-Dtor_akin (akinator* Akin_data)
+void Dtor_akin (akinator* Akin_data)
 {
-    atexit (txDisableAutoPause ());
-    atexit (Free_akin (Akin_data));
-    atexit (Close_File (Base_File));
-    atexit (Close_File (Log_File));
+    txDisableAutoPause ();
+    Free_akin (Akin_data);
+    Close_File (Log_File);
+    Close_File (Base_File);
 }
+//====================================================================================================================================
+int Check_input_akin (char* temp_str)
+{
+    if ((toupper (temp_str[0]) == 'G' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "guess"))   && temp_str[5] == '\n'))
+        return GUESS;
+
+    if ((toupper (temp_str[0]) == 'C' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "compare")) && temp_str[7] == '\n'))
+        return COMPARE;
+
+    if ((toupper (temp_str[0]) == 'D' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "define"))  && temp_str[7] == '\n'))
+        return DEFINITION;
+
+    if ((toupper (temp_str[0]) == 'E' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "exit"))    && temp_str[4] == '\n'))
+        return EXIT_AKIN;  
+
+    if ((toupper (temp_str[0]) == 'Y' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "yes"))     && temp_str[7] == '\n'))
+        return YES;
+    
+    if ((toupper (temp_str[0]) == 'N' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "no"))      && temp_str[7] == '\n'))
+        return NO;
+
+    else {(printf ("Incorrect input ! Try again\n"));
+        return 0;}
+
+}
+//====================================================================================================================================
+int My_Strcmp (const char* first_string, const char* second_string)
+{
+    assert (first_string);
+    assert (second_string);
+
+    int i = 0;
+    for (; toupper(first_string[i]) == toupper(second_string[i]); i++)
+    if (first_string[i] == '\0')
+    return 0;
+    return first_string[i] - second_string[i];
+
+}
+//====================================================================================================================================
