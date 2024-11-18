@@ -39,7 +39,7 @@ char* Skip_space (const char* ptr);
 node_akntr* Print3 (node_akntr* node);
 void Print_tab (size_t cnt, FILE* file_ptr);
 void Free_akin (akinator* akin_data);
-
+Dtor_akin (akinator* Akin_data);
 
 #define TYPE "s"
 

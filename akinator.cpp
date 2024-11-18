@@ -14,11 +14,9 @@
 extern FILE* Log_File;
 extern FILE* Graph_File;
 extern FILE* Graph_File_Utf8;
-extern FILE* Base_File;
+extern FILE* Base_File; 
 
 //====================================================================================================================================
-#define node_root *(Akin_data -> root_node)
-
 int main (int argc, char* argv[])
 {
     /*Log_File = Create_file ("LOG_AKINATOR.html");
@@ -41,15 +39,8 @@ int main (int argc, char* argv[])
     Base_File = Create_file (argv[1]);
     Print3 (node_null);
 
-    Close_File (Log_File);
-    Close_File (Base_File);
-    Free_akin (Akin_data);
-    txDisableAutoPause ();
-
-    return 0;
+    Dtor_akin (Akin_Data);
 }
-
-#undef node_root
 //====================================================================================================================================
 node_akntr* Create_node (el_t data)
 {
@@ -404,16 +395,23 @@ void Print_tab (size_t cnt, FILE* file_ptr)
         fprintf (file_ptr, "\t");
 }
 //====================================================================================================================================
-void Free_akin (akinator* akin_data)
+void Free_akin (akinator* Akin_data)
 {
-    assert (akin_data);
-    printf ("akin_data -> root_node = %p\n", akin_data -> root_node   );
-    printf ("*(akin_data -> root_node) = %p\n", *(akin_data -> root_node));
-    printf ("akin_data -> root_node[0] = %p\n", akin_data -> root_node[0]);
+    assert (Akin_data);
+    printf ("Akin_data -> root_node = %p\n", Akin_data -> root_node   );
+    printf ("*(Akin_data -> root_node) = %p\n", *(Akin_data -> root_node));
+    printf ("Akin_data -> root_node[0] = %p\n", Akin_data -> root_node[0]);
 
-    free (akin_data -> onegin_data);
-    free (akin_data);
+    free (Akin_data -> onegin_data);
+    free (Akin_data);
 
     return;
 }
 //====================================================================================================================================
+Dtor_akin (akinator* Akin_data)
+{
+    atexit (txDisableAutoPause ());
+    atexit (Free_akin (Akin_data));
+    atexit (Close_File (Base_File));
+    atexit (Close_File (Log_File));
+}
