@@ -4,44 +4,44 @@ digraph
 	node [ color = "#004b00", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
 	edge [ color = "#004b00", fontsize = 16];
 
-	node_0000024a261790b0 [ shape = "Mrecord", label = "{ data = Akinator \n addr: 0000024a261790b0 | { L:\n addr: 0000024a26179010 | R: \n addr: 0000024a261790d0 } }" ];
+	node_0000022b17eb90f0 [ shape = "Mrecord", label = "{ data = Akinator \n addr: 0000022b17eb90f0 | { L:\n addr: 0000022b17eb9170 | R: \n addr: 0000022b17eb9250 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"1" ->  "2";
 	}
 
-	{ rank = 1; "1"; "node_0000024a261790b0" }
+	{ rank = 1; "1"; "node_0000022b17eb90f0" }
 
-	node_0000024a26179010[ shape = "Mrecord", label = "{ data = YES_YES\n addr: 0000024a26179010 | { L:\n addr: 0000024a26179210 |   R: \n addr: 0000000000000000 } }" ];
-	node_0000024a261790b0  -> node_0000024a26179010;
+	node_0000022b17eb9170[ shape = "Mrecord", label = "{ data = YES_YES\n addr: 0000022b17eb9170 | { L:\n addr: 0000022b17eb9230 |   R: \n addr: 0000000000000000 } }" ];
+	node_0000022b17eb90f0  -> node_0000022b17eb9170;
 
-	node_0000024a261790d0 [ shape = "Mrecord", label = " { data = Skibidi dob dob yes yes\n addr: 0000024a261790d0 | { L:\n addr: 0000024a26179030 | R: \n addr: 0000024a26179350 } }" ];
-	node_0000024a261790b0  -> node_0000024a261790d0;
+	node_0000022b17eb9250 [ shape = "Mrecord", label = " { data = Skibidi dob dob yes yes\n addr: 0000022b17eb9250 | { L:\n addr: 0000022b17eb92b0 | R: \n addr: 0000022b17eb9290 } }" ];
+	node_0000022b17eb90f0  -> node_0000022b17eb9250;
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
 		edge[ color = "white"]
 		"1" ->  "2";
 	}
 
-	node_0000024a26179010 [ shape = "Mrecord", label = "{ data = YES_YES \n addr: 0000024a26179010 | { L:\n addr: 0000024a26179210 | R: \n addr: 0000000000000000 } }" ];
+	node_0000022b17eb9170 [ shape = "Mrecord", label = "{ data = YES_YES \n addr: 0000022b17eb9170 | { L:\n addr: 0000022b17eb9230 | R: \n addr: 0000000000000000 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"2" ->  "3";
 	}
 
-	{ rank = 2; "2"; "node_0000024a26179010" }
+	{ rank = 2; "2"; "node_0000022b17eb9170" }
 
-	node_0000024a26179210[ shape = "Mrecord", label = "{ data = Eto zhe azamat\n addr: 0000024a26179210 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
-	node_0000024a26179010  -> node_0000024a26179210;
+	node_0000022b17eb9230[ shape = "Mrecord", label = "{ data = Eto zhe azamat\n addr: 0000022b17eb9230 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
+	node_0000022b17eb9170  -> node_0000022b17eb9230;
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_r_null_0000024a26179010 [shape = "ellipse", label = " null" ];
-		node_0000024a26179010  -> node_r_null_0000024a26179010;
+		node_r_null_0000022b17eb9170 [shape = "ellipse", label = " null" ];
+		node_0000022b17eb9170  -> node_r_null_0000022b17eb9170;
 	}
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
@@ -49,29 +49,29 @@ digraph
 		"2" ->  "3";
 	}
 
-	node_0000024a26179210 [ shape = "Mrecord", label = "{ data = Eto zhe azamat \n addr: 0000024a26179210 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	node_0000022b17eb9230 [ shape = "Mrecord", label = "{ data = Eto zhe azamat \n addr: 0000022b17eb9230 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"3" ->  "4";
 	}
 
-	{ rank = 3; "3"; "node_0000024a26179210" }
+	{ rank = 3; "3"; "node_0000022b17eb9230" }
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_l_null_0000024a26179210[ shape = "ellipse", label = "null" ];
-		node_0000024a26179210  -> node_l_null_0000024a26179210;
+		node_l_null_0000022b17eb9230[ shape = "ellipse", label = "null" ];
+		node_0000022b17eb9230  -> node_l_null_0000022b17eb9230;
 	}
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_r_null_0000024a26179210 [shape = "ellipse", label = " null" ];
-		node_0000024a26179210  -> node_r_null_0000024a26179210;
+		node_r_null_0000022b17eb9230 [shape = "ellipse", label = " null" ];
+		node_0000022b17eb9230  -> node_r_null_0000022b17eb9230;
 	}
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
@@ -79,49 +79,49 @@ digraph
 		"3" ->  "4";
 	}
 
-	node_0000024a261790d0 [ shape = "Mrecord", label = "{ data = Skibidi dob dob yes yes \n addr: 0000024a261790d0 | { L:\n addr: 0000024a26179030 | R: \n addr: 0000024a26179350 } }" ];
+	node_0000022b17eb9250 [ shape = "Mrecord", label = "{ data = Skibidi dob dob yes yes \n addr: 0000022b17eb9250 | { L:\n addr: 0000022b17eb92b0 | R: \n addr: 0000022b17eb9290 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"2" ->  "3";
 	}
 
-	{ rank = 2; "2"; "node_0000024a261790d0" }
+	{ rank = 2; "2"; "node_0000022b17eb9250" }
 
-	node_0000024a26179030[ shape = "Mrecord", label = "{ data = Sonya topi\n addr: 0000024a26179030 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
-	node_0000024a261790d0  -> node_0000024a26179030;
+	node_0000022b17eb92b0[ shape = "Mrecord", label = "{ data = Sonya topi\n addr: 0000022b17eb92b0 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
+	node_0000022b17eb9250  -> node_0000022b17eb92b0;
 
-	node_0000024a26179350 [ shape = "Mrecord", label = " { data = Nastya_topi\n addr: 0000024a26179350 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
-	node_0000024a261790d0  -> node_0000024a26179350;
+	node_0000022b17eb9290 [ shape = "Mrecord", label = " { data = Nastya_topi\n addr: 0000022b17eb9290 | { L:\n addr: 0000022b17eb9ab0 | R: \n addr: 0000000000000000 } }" ];
+	node_0000022b17eb9250  -> node_0000022b17eb9290;
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
 		edge[ color = "white"]
 		"2" ->  "3";
 	}
 
-	node_0000024a26179030 [ shape = "Mrecord", label = "{ data = Sonya topi \n addr: 0000024a26179030 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	node_0000022b17eb92b0 [ shape = "Mrecord", label = "{ data = Sonya topi \n addr: 0000022b17eb92b0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"3" ->  "4";
 	}
 
-	{ rank = 3; "3"; "node_0000024a26179030" }
+	{ rank = 3; "3"; "node_0000022b17eb92b0" }
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_l_null_0000024a26179030[ shape = "ellipse", label = "null" ];
-		node_0000024a26179030  -> node_l_null_0000024a26179030;
+		node_l_null_0000022b17eb92b0[ shape = "ellipse", label = "null" ];
+		node_0000022b17eb92b0  -> node_l_null_0000022b17eb92b0;
 	}
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_r_null_0000024a26179030 [shape = "ellipse", label = " null" ];
-		node_0000024a26179030  -> node_r_null_0000024a26179030;
+		node_r_null_0000022b17eb92b0 [shape = "ellipse", label = " null" ];
+		node_0000022b17eb92b0  -> node_r_null_0000022b17eb92b0;
 	}
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
@@ -129,29 +129,24 @@ digraph
 		"3" ->  "4";
 	}
 
-	node_0000024a26179350 [ shape = "Mrecord", label = "{ data = Nastya_topi \n addr: 0000024a26179350 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	node_0000022b17eb9290 [ shape = "Mrecord", label = "{ data = Nastya_topi \n addr: 0000022b17eb9290 | { L:\n addr: 0000022b17eb9ab0 | R: \n addr: 0000000000000000 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"3" ->  "4";
 	}
 
-	{ rank = 3; "3"; "node_0000024a26179350" }
+	{ rank = 3; "3"; "node_0000022b17eb9290" }
+
+	node_0000022b17eb9ab0[ shape = "Mrecord", label = "{ data = Danya_topi\n addr: 0000022b17eb9ab0 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
+	node_0000022b17eb9290  -> node_0000022b17eb9ab0;
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_l_null_0000024a26179350[ shape = "ellipse", label = "null" ];
-		node_0000024a26179350  -> node_l_null_0000024a26179350;
-	}
-
-	{
-		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
-		edge [ color = "#007cff", fontsize = 16];
-
-		node_r_null_0000024a26179350 [shape = "ellipse", label = " null" ];
-		node_0000024a26179350  -> node_r_null_0000024a26179350;
+		node_r_null_0000022b17eb9290 [shape = "ellipse", label = " null" ];
+		node_0000022b17eb9290  -> node_r_null_0000022b17eb9290;
 	}
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
@@ -159,6 +154,36 @@ digraph
 		"3" ->  "4";
 	}
 
+	node_0000022b17eb9ab0 [ shape = "Mrecord", label = "{ data = Danya_topi \n addr: 0000022b17eb9ab0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	{
+		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
+		edge[ color = "white"]
+		"4" ->  "5";
+	}
 
-	node_0000024a261790b0 [ fillcolor = "#ffa615"];
+	{ rank = 4; "4"; "node_0000022b17eb9ab0" }
+
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_l_null_0000022b17eb9ab0[ shape = "ellipse", label = "null" ];
+		node_0000022b17eb9ab0  -> node_l_null_0000022b17eb9ab0;
+	}
+
+	{
+		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
+		edge [ color = "#007cff", fontsize = 16];
+
+		node_r_null_0000022b17eb9ab0 [shape = "ellipse", label = " null" ];
+		node_0000022b17eb9ab0  -> node_r_null_0000022b17eb9ab0;
+	}
+	{
+		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
+		edge[ color = "white"]
+		"4" ->  "5";
+	}
+
+
+	node_0000022b17eb90f0 [ fillcolor = "#ffa615"];
 }

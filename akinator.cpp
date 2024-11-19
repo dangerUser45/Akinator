@@ -226,25 +226,28 @@ void Run_akinator (node_akntr* node)
 {
     if (!node) return;
 
-    printf ("\t\tHello! Welcome to the akinator programm !\n"
-            "\t\tWhat do you want to do?\n"
-            "\t\t\t\tEnter :\n" 
-            "\t\t[guess]    - start guessing\n"
-            "\t\t[compare]  - compare two objects\n"
-            "\t\t[define]   - define an object\n"
-            "\t\t[exit]     - programm exit\n");    
+    printf ("Hello! Welcome to the akinator programm !\n"
+            "What do you want to do?\n"
+            "Enter :\n" 
+            "[guess]    - start guessing\n"
+            "[compare]  - compare two objects\n"
+            "[define]   - define an object\n"
+            "[exit]     - programm exit\n");    
     
     char* temp_str = (char*) calloc (256, sizeof (char));
 
     while (true)
     {
-        scanf  ("%s", temp_str);
+        scanf ("%[^\n]", temp_str);
+        getchar ();
         int action = Check_input_akin (temp_str);
 
         switch (action)
         {
             case GUESS:
                 Guess_Akin (node);
+                DBGAKN (printf ("I am in case: GUESS\n");)
+                printf ("What do you want to do next ?\n");
                 break;
             
             case COMPARE:
@@ -256,13 +259,13 @@ void Run_akinator (node_akntr* node)
                 break;
 
             case EXIT_AKIN:
-                exit (0);
+                return;
         
             case 0:
                 continue;
                 
             default:
-                fprintf (Log_File, "ERROR IN Play_akinator(): line %d", __LINE__);
+                fprintf (Log_File, "ERROR IN Run_akinator(): line %d", __LINE__);
                 break;
         }
     }
@@ -275,49 +278,109 @@ void Guess_Akin (node_akntr* node_root)
     node_akntr* node = node_root;
     printf ("Guess any object and I will try to guess it !\n");
     node_akntr* new_node = 0;
-    char temp_str [40];
-    char* object = (char*) calloc (256, sizeof (char));
+    char* temp_str = (char*) calloc (10, sizeof (char));;
+    char* object   = (char*) calloc (256, sizeof (char));
 
     while (1)
     {
         printf ("That is %s ?\n", node -> data);
-        printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n"); 
-        scanf ("%s", temp_str);
-        int input = Check_input_akin (temp_str);
+        printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n");
 
-        switch (input)
+        scanf ("%[^\n]", temp_str);
+        getchar ();
+        int action = Check_input_akin (temp_str);
+
+        if (action == YES)
         {
-            case YES:
+            new_node = node -> left;
+            if (!new_node)
+            {
+                printf ("I think this is \"%"TYPE"\"?\n", node -> data);
+                printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n");
+                char str[10] = "";
+
+                while (true)
                 {
-                    new_node = node -> left;
-                    if (!new_node)
+                    scanf ("%[^\n]", str);
+                    DBGAKN (printf ("str = \"%s\"", str);)
+                    getchar ();
+                    int action_ = Check_input_akin (str);
+
+                    if (action_ == NO)
                     {
+                        printf ("Enter who it was\n");
+                        scanf ("%[^\n]", object );
+                        getchar();
                         node -> left = Create_node (object);
-                        return;
-                    }
-                    node = new_node;
-                }
+                        printf ("node = %p", node);
+                        printf ("The database has been updated !\n");
 
-            case NO:
-                {
-                    new_node = node -> right; 
-                    if (!new_node) 
+                    }
+
+                    else if (action_ == YES)
+                        printf ("I guessed it! Game over!\n");
+
+                    else
                     {
-                        node -> right = Create_node (object); 
-                        return;
+                        printf ("Wrong input, enter [Y] or [N]\n");
+                        continue;
                     }
-                    node = new_node;
-                } 
-
-            default:
-                {
-                    printf ("Wrong input, enter [Y] or [N]\n");
-                    continue;
+                    
+                    return;
                 }
+            }
+            node = new_node;
         }
 
+        else if (action == NO)
+        {
+            new_node = node -> right; 
+            if (!new_node)
+            {
+                printf ("I think this is \"%"TYPE"\"? Right?\n", node -> data);
+                printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n");
+                char str[10] = "";
+
+                while (true)
+                {
+                    scanf ("%[^\n]", str);
+                    DBGAKN (printf ("str = \"%s\"", str);)
+                    getchar ();
+                    int action_ = Check_input_akin (str);
+
+                    if (action_ == NO)
+                    {
+                        printf ("Enter who it was\n");
+                        scanf ("%[^\n]", object );
+                        getchar();
+                        node -> left = Create_node (object);
+                        printf ("node = %p", node);
+
+                        printf ("The database has been updated !\n");
+
+                    }
+
+                    else if (action_ == YES)
+                        printf ("I guessed it! Game over!\n");
+
+                    else
+                    {
+                        printf ("Wrong input, enter [Y] or [N]\n");
+                        continue;
+                    }
+
+                    return;
+                }
+            }
+            node = new_node;
+        } 
+
+        else 
+        {
+            printf ("Wrong input, enter [Y] or [N]\n");
+            continue;
+        }
     }
-    free (object);
 }
 //====================================================================================================================================
 node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node_root)
@@ -437,27 +500,27 @@ void Dtor_akin (akinator* Akin_data)
 //====================================================================================================================================
 int Check_input_akin (char* temp_str)
 {
-    if ((toupper (temp_str[0]) == 'G' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "guess"))   && temp_str[5] == '\n'))
+
+    if ((toupper (temp_str[0]) == 'G' && temp_str[1] == '\0') || !(My_Strcmp (temp_str, "guess")))
         return GUESS;
 
-    if ((toupper (temp_str[0]) == 'C' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "compare")) && temp_str[7] == '\n'))
+    if ((toupper (temp_str[0]) == 'C' && temp_str[1] == '\0') || !(My_Strcmp (temp_str, "compare")))
         return COMPARE;
 
-    if ((toupper (temp_str[0]) == 'D' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "define"))  && temp_str[7] == '\n'))
+    if ((toupper (temp_str[0]) == 'D' && temp_str[1] == '\0') || !(My_Strcmp (temp_str, "define")))
         return DEFINITION;
 
-    if ((toupper (temp_str[0]) == 'E' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "exit"))    && temp_str[4] == '\n'))
+    if ((toupper (temp_str[0]) == 'E' && temp_str[1] == '\0') || !(My_Strcmp (temp_str, "exit")))
         return EXIT_AKIN;  
 
-    if ((toupper (temp_str[0]) == 'Y' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "yes"))     && temp_str[7] == '\n'))
+    if ((toupper (temp_str[0]) == 'Y' && temp_str[1] == '\0') || !(My_Strcmp (temp_str, "yes")))
         return YES;
     
-    if ((toupper (temp_str[0]) == 'N' && temp_str[1] == '\0') || (!(My_Strcmp (temp_str, "no"))      && temp_str[7] == '\n'))
+    if ((toupper (temp_str[0]) == 'N' && temp_str[1] == '\0') || !(My_Strcmp (temp_str, "no")))
         return NO;
 
     else {(printf ("Incorrect input ! Try again\n"));
         return 0;}
-
 }
 //====================================================================================================================================
 int My_Strcmp (const char* first_string, const char* second_string)

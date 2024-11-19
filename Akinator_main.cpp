@@ -12,7 +12,8 @@ int main (int argc, char* argv[])
     Read3 (Akin_data -> onegin_data, argv[1], &node_null);
     Dump_akin (node_null, node_null);
 
-    Run_akinator (node_null);  
+    Run_akinator (node_null); 
+    Dump_akin (node_null, node_null);
 
     Base_File = Create_file (argv[1]);
     Print3 (node_null);

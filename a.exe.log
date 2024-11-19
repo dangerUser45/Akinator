@@ -1,0 +1,72 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\a.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF701C3ED73 в функции Check_input_akin(). Попытка прочесть данные по адресу NULL в модуле D:\GitHub\Akinator\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF701D928D0 (64-bit), Flags: Cmdre0, Thread: 0x2D1C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF701C3ED73 in D:\GitHub\Akinator\a.exe: Check_input_akin()
+# 1 0x00007FF701C3EB83 in D:\GitHub\Akinator\a.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 18 2024 23:30:52, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 18 2024 23:30:58
+
+Run file:	D:\GitHub\Akinator\a.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\a.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF701C3ED73 в функции Check_input_akin(). Попытка прочесть данные по адресу NULL в модуле D:\GitHub\Akinator\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF701D928D0 (64-bit), Flags: Cmdre0, Thread: 0x2D1C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF701C3ED73 in D:\GitHub\Akinator\a.exe: Check_input_akin()
+# 1 0x00007FF701C3EB83 in D:\GitHub\Akinator\a.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 18 2024 23:30:52, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 18 2024 23:30:58
+
+Run file:	D:\GitHub\Akinator\a.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------

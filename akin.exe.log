@@ -4033,3 +4033,225 @@ Run file:	D:\GitHub\Akinator\akin.exe
 Directory:	D:\GitHub\Akinator
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF76C591E09 в функции Guess_Akin(). Попытка прочесть данные по адресу NULL в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF76C7074C8 (64-bit), Flags: Cmdre0, Thread: 0x44A0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF76C591E09 in D:\GitHub\Akinator\akin.exe: Guess_Akin()
+# 1 0x00007FF76C591CE9 in D:\GitHub\Akinator\akin.exe: Run_akinator()
+# 2 0x00007FF76C5929D2 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 19 2024 02:10:12, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 19 2024 02:14:25
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF76C591E09 в функции Guess_Akin(). Попытка прочесть данные по адресу NULL в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF76C7074C8 (64-bit), Flags: Cmdre0, Thread: 0x44A0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF76C591E09 in D:\GitHub\Akinator\akin.exe: Guess_Akin()
+# 1 0x00007FF76C591CE9 in D:\GitHub\Akinator\akin.exe: Run_akinator()
+# 2 0x00007FF76C5929D2 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 19 2024 02:10:12, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 19 2024 02:14:25
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF76C591EF4 в функции Guess_Akin(). Попытка прочесть данные по адресу NULL в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF76C7074C8 (64-bit), Flags: Cmdre0, Thread: 0x24CC (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF76C591EF4 in D:\GitHub\Akinator\akin.exe: Guess_Akin()
+# 1 0x00007FF76C591CE9 in D:\GitHub\Akinator\akin.exe: Run_akinator()
+# 2 0x00007FF76C5929D2 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 19 2024 02:10:12, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 19 2024 02:15:06
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF76C591EF4 в функции Guess_Akin(). Попытка прочесть данные по адресу NULL в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF76C7074C8 (64-bit), Flags: Cmdre0, Thread: 0x24CC (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF76C591EF4 in D:\GitHub\Akinator\akin.exe: Guess_Akin()
+# 1 0x00007FF76C591CE9 in D:\GitHub\Akinator\akin.exe: Run_akinator()
+# 2 0x00007FF76C5929D2 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 19 2024 02:10:12, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 19 2024 02:15:06
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF76C591E09 в функции Guess_Akin(). Попытка прочесть данные по адресу NULL в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF76C7074C8 (64-bit), Flags: Cmdre0, Thread: 0x497C (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF76C591E09 in D:\GitHub\Akinator\akin.exe: Guess_Akin()
+# 1 0x00007FF76C591CE9 in D:\GitHub\Akinator\akin.exe: Run_akinator()
+# 2 0x00007FF76C5929D2 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 19 2024 02:10:12, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 19 2024 02:16:51
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF76C591E09 в функции Guess_Akin(). Попытка прочесть данные по адресу NULL в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF76C7074C8 (64-bit), Flags: Cmdre0, Thread: 0x497C (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF76C591E09 in D:\GitHub\Akinator\akin.exe: Guess_Akin()
+# 1 0x00007FF76C591CE9 in D:\GitHub\Akinator\akin.exe: Run_akinator()
+# 2 0x00007FF76C5929D2 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 19 2024 02:10:12, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 19 2024 02:16:50
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
