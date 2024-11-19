@@ -22,6 +22,8 @@ node_akntr* Create_node (el_t data)
     node_akntr* new_node = (node_akntr*) calloc (1, sizeof (node_akntr));
     if (!new_node) {fprintf (Log_File, "Error!"); assert (new_node);}
 
+    
+
     new_node -> data = data;
 
     return new_node;
@@ -251,16 +253,19 @@ void Run_akinator (node_akntr* node)
             
             case COMPARE:
                 //Compare_Akin ();
+                printf ("What do you want to do next ?\n");
                 break;
 
             case DEFINITION:
                 //Definition_Akin ();
+                printf ("What do you want to do next ?\n");
                 break;
 
             case EXIT_AKIN:
                 return;
         
             case 0:
+                printf ("Wrong input, enter [Y] or [N]\n");
                 continue;
                 
             default:
@@ -278,7 +283,8 @@ void Guess_Akin (node_akntr* node_root)
     node_akntr* node = node_root;
     printf ("Guess any object and I will try to guess it !\n");
     
-    node_akntr* new_node = 0;
+    node_akntr* old_node = 0;
+
     char* temp_str = (char*) calloc (10, sizeof (char));    
     char* object   = (char*) calloc (256, sizeof (char));
 
@@ -287,73 +293,90 @@ void Guess_Akin (node_akntr* node_root)
         printf ("That is %s ?\n", node -> data);
         printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n");
 
-        scanf ("%[^\n]", temp_str);
-        getchar ();
+        scanf ("%[^\n]", temp_str); getchar ();
         int action = Check_input_akin (temp_str);
+        bool left = true;
 
         if (action == YES)
         {
-            new_node = node -> left;
-            if (!new_node){
-                Insert_akin (node, object, true);
-                return; }
-            node = new_node;
+            left = true;
+            if (!node -> left){
+                if (node->right) {DBGAKN( fprintf (Log_File, "Error in Guess_Akin() line%d: wrong base", __LINE__);) fflush (Log_File); return; }
+                printf ("Hooray! I got it!\n");
+                return;}
+            old_node = node; 
+            node = node -> left;    
         }
 
         else if (action == NO)
         {
-            new_node = node -> right; 
-            if (!new_node){
-                Insert_akin (node, object, false);
+            left = false;
+            if (!node -> right){
+                if (node->left) {DBGAKN( fprintf (Log_File, "Error in Guess_Akin() line%d: wrong base", __LINE__);) fflush (Log_File); return; }
+                Insert_akin (old_node, node, object, temp_str, left);
+                node_akntr* node__ = node_root;
+                Print3 (node__);
                 return;}
-            node = new_node;
-        } 
+            old_node = node; 
+            node = node -> right;
+        }
 
         else 
         {
             printf ("Wrong input, enter [Y] or [N]\n");
             continue;
         }
-    }
+    }   
+
+    free (temp_str);
+    free (object);
 }
 //====================================================================================================================================
-void Insert_akin (node_akntr* node, char* object, bool side)
+void Insert_akin (node_akntr* old_node, node_akntr* node, char* object, char* temp_str, bool left)
 {
-    printf ("I think this is \"%"TYPE"\"?\n", node -> data);
-    printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n");
-    char str[10] = "";
+    printf ("Who it was ?\n");
+    scanf ("%[^\n]", object); getchar ();
+    printf ("Do you wish to add a new item to the database ?\n Enter [Y] or [N]\n");
 
     while (true)
-    {
-        scanf ("%[^\n]", str);
-        DBGAKN (printf ("str = \"%s\"", str);)
-        getchar ();
-        int action_ = Check_input_akin (str);
+    { 
+        scanf ("%[^\n]", temp_str); getchar ();
+        int action = Check_input_akin (temp_str);
 
-        if (action_ == NO)
+        switch (action)
         {
-            printf ("Enter who it was\n");
-            scanf ("%[^\n]", object );
-            getchar();
+            case YES: {
+                printf ("What's the difference between \"%s\" and \"%s\"?\n", object, node -> data  );
+                char* different = (char*) calloc (256, sizeof (char));
+                scanf ("%[^\n]", different); getchar ();
 
-            if (side) node -> left  = Create_node (object);
-            else     node -> right = Create_node (object);
+                node_akntr* new_node  = Create_node (object);
+                node_akntr* diff_node = Create_node (different);
 
-            DBGAKN(printf ("node = %p", node);)
-            printf ("The database has been updated !\n");
 
-        }
-
-        else if (action_ == YES)
-            printf ("I guessed it! Game over!\n");
-
-        else
-        {
-            printf ("Wrong input, enter [Y] or [N]\n");
-            continue;
-        }
+                if (left) old_node  -> left  = diff_node;
+                else      old_node  -> right = diff_node;
         
-        return;
+                diff_node -> right = node;
+                diff_node -> left  = new_node;
+        
+                DBGAKN(fprintf (Log_File, "old_node -> data: %s\n", old_node -> data);)
+                DBGAKN(fprintf (Log_File, "old_node: %p\n", old_node);)
+
+                DBGAKN(fprintf (Log_File, "old_node -> left -> data: %s\n", old_node -> left -> data);)
+                DBGAKN(fprintf (Log_File, "old_node -> left %p\n", old_node -> left);)
+
+                DBGAKN(fprintf (Log_File, "old_node -> right: %s\n", old_node -> right -> data);)
+                DBGAKN(fprintf (Log_File, "old_node -> right -> data: %p\n", old_node -> right);)
+                return;}
+            
+            case NO:
+                return;
+
+            default:   {
+                printf ("Wrong input, enter [Y] or [N]\n");
+                continue;}
+        }
     }
 }
 //====================================================================================================================================
@@ -386,6 +409,7 @@ node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node
                     $(*quote_pos) ;)
 
             node_akntr* node = Create_node (quote_pos + 1);
+
             DBGAKN (fprintf (Log_File, "Я добавил узел: %s\n", quote_pos + 1);
             DBGAKN(fprintf (Log_File, "Его адрес: %p\n", node);))
             ++counter;
@@ -396,7 +420,7 @@ node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node
             {
                 onegin -> buffer_addr = strchr (onegin -> buffer_addr, '{');
                 return node;
-            }
+            }    
 
             if (counter == 1) {*node_root = node; fprintf (Log_File, "Тут должен быть один вызов\n");}   
             DBGAKN($(counter);)
@@ -432,7 +456,7 @@ node_akntr* Print3 (node_akntr* node)
     ++cnt;
 
     if (!node -> left) { PT; fprintf (Base_File, "{}\n"); }
-    else  { PT; Print3 (node -> left); }
+      else  { PT; Print3 (node -> left); }
 
     if (!node -> right) {PT; fprintf (Base_File, "{}\n"); }
     else { PT; Print3 (node -> right); } 
@@ -510,3 +534,12 @@ int My_Strcmp (const char* first_string, const char* second_string)
 
 }
 //====================================================================================================================================
+void Definition_akin (node_akntr* node)
+{
+    assert (node);
+    printf ("Name the object that needs to be defined\n");
+    printf ("Here's a list of all the facilities:");
+    printf ("  ");
+
+}
+

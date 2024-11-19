@@ -1,6 +1,6 @@
 #pragma once
 
-#define DEBUG 0 
+#define DEBUG 1
 
 #if  (DEBUG == 1) 
     #define DBGAKN( ... ) __VA_ARGS__
@@ -17,12 +17,21 @@ struct node_akntr
     node_akntr* right;
 };
 
+struct list_node 
+{
+    char* name_node;
+    short* path;
+    size_t number_list;
+};
+
 struct akinator
 {
     node_akntr** root_node;
     ONEGIN* onegin_data;
     FILE* base;
+    list_node* list_array;
 };
+
 
 enum input_akin {GUESS = 1, COMPARE, DEFINITION, EXIT_AKIN, YES, NO};
 
@@ -37,7 +46,8 @@ int Dump_akin (node_akntr* node, node_akntr* new_node);
 void Insert (node_akntr* node, el_t value);
 void Run_akinator (node_akntr* node);
 void Guess_Akin (node_akntr* node);
-void Insert_akin (node_akntr* node, char* object, bool side);
+void Definition_akin (node_akntr* node);
+void Insert_akin (node_akntr* old_node, node_akntr* node, char* object, char* temp_str, bool left);
 node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node_root);
 char* Skip_space (const char* ptr);
 node_akntr* Print3 (node_akntr* node);
@@ -50,6 +60,7 @@ int My_Strcmp (const char* first_string, const char* second_string);
 #define TYPE "s"
 
 const int SCALE = 50;
+const size_t INIT_NUM_LIST = 128;
 
 
 //TODO fix all free

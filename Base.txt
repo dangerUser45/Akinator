@@ -1,16 +1,32 @@
 { "Akinator"
 	{ "YES_YES"
-		{ "RERE"
+		{}
+		{}
+	}
+	{ "wefd"
+		{ "tref"
 			{}
 			{}
 		}
-		{ "ERER"
+		{ "NO NO"
 			{}
 			{}
 		}
 	}
-	{ "NO NO"
+}
+{ "Akinator"
+	{ "YES_YES"
 		{}
 		{}
+	}
+	{ "wefd"
+		{ "tref"
+			{}
+			{}
+		}
+		{ "NO NO"
+			{}
+			{}
+		}
 	}
 }

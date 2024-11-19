@@ -1,10 +1,7 @@
 { "Qvadrober"
 	{ "Ded"
 		{}
-		{ "Itsa"
-			{}
-			{}
-		}
+		{}
 	}
 	{ "Zhivitnoe"
 		{ "Na phistexe"

@@ -8,25 +8,25 @@
  viewBox="0.00 0.00 803.93 282.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 278)">
 <polygon fill="white" stroke="none" points="-4,4 -4,-278 799.93,-278 799.93,4 -4,4"/>
-<!-- node_000001e217029230 -->
+<!-- node_000001a3998791f0 -->
 <g id="node1" class="node">
-<title>node_000001e217029230</title>
+<title>node_000001a3998791f0</title>
 <path fill="#ffa615" stroke="#004b00" d="M265.75,-191.5C265.75,-191.5 558.75,-191.5 558.75,-191.5 564.75,-191.5 570.75,-197.5 570.75,-203.5 570.75,-203.5 570.75,-261.5 570.75,-261.5 570.75,-267.5 564.75,-273.5 558.75,-273.5 558.75,-273.5 265.75,-273.5 265.75,-273.5 259.75,-273.5 253.75,-267.5 253.75,-261.5 253.75,-261.5 253.75,-203.5 253.75,-203.5 253.75,-197.5 259.75,-191.5 265.75,-191.5"/>
 <text text-anchor="middle" x="412.25" y="-256.2" font-family="Times New Roman,serif" font-size="14.00">data = Akinator </text>
-<text text-anchor="middle" x="412.25" y="-239.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 000001e217029230</text>
+<text text-anchor="middle" x="412.25" y="-239.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 000001a3998791f0</text>
 <polyline fill="none" stroke="#004b00" points="253.75,-232.5 570.75,-232.5"/>
 <text text-anchor="middle" x="333" y="-215.2" font-family="Times New Roman,serif" font-size="14.00">L:</text>
-<text text-anchor="middle" x="333" y="-198.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 000001e2170290d0</text>
+<text text-anchor="middle" x="333" y="-198.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 000001a399879230</text>
 <polyline fill="none" stroke="#004b00" points="412.25,-191.5 412.25,-232.5"/>
 <text text-anchor="middle" x="491.5" y="-215.2" font-family="Times New Roman,serif" font-size="14.00">R: </text>
-<text text-anchor="middle" x="491.5" y="-198.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 000001e217029250</text>
+<text text-anchor="middle" x="491.5" y="-198.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 000001a399879250</text>
 </g>
-<!-- node_000001e2170290d0 -->
+<!-- node_000001a399879230 -->
 <g id="node4" class="node">
-<title>node_000001e2170290d0</title>
+<title>node_000001a399879230</title>
 <path fill="#a2f8a4" stroke="#004b00" d="M12,-72.5C12,-72.5 306.5,-72.5 306.5,-72.5 312.5,-72.5 318.5,-78.5 318.5,-84.5 318.5,-84.5 318.5,-142.5 318.5,-142.5 318.5,-148.5 312.5,-154.5 306.5,-154.5 306.5,-154.5 12,-154.5 12,-154.5 6,-154.5 0,-148.5 0,-142.5 0,-142.5 0,-84.5 0,-84.5 0,-78.5 6,-72.5 12,-72.5"/>
 <text text-anchor="middle" x="159.25" y="-137.2" font-family="Times New Roman,serif" font-size="14.00">data = YES_YES </text>
-<text text-anchor="middle" x="159.25" y="-120.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 000001e2170290d0</text>
+<text text-anchor="middle" x="159.25" y="-120.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 000001a399879230</text>
 <polyline fill="none" stroke="#004b00" points="0,-113.5 318.5,-113.5"/>
 <text text-anchor="middle" x="79.62" y="-96.2" font-family="Times New Roman,serif" font-size="14.00">L:</text>
 <text text-anchor="middle" x="79.62" y="-79.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 0000000000000000</text>
@@ -34,18 +34,18 @@
 <text text-anchor="middle" x="238.88" y="-96.2" font-family="Times New Roman,serif" font-size="14.00">R: </text>
 <text text-anchor="middle" x="238.88" y="-79.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 0000000000000000</text>
 </g>
-<!-- node_000001e217029230&#45;&gt;node_000001e2170290d0 -->
+<!-- node_000001a3998791f0&#45;&gt;node_000001a399879230 -->
 <g id="edge2" class="edge">
-<title>node_000001e217029230&#45;&gt;node_000001e2170290d0</title>
+<title>node_000001a3998791f0&#45;&gt;node_000001a399879230</title>
 <path fill="none" stroke="#004b00" d="M324.83,-191.07C302.9,-180.93 279.24,-169.99 256.86,-159.64"/>
 <polygon fill="#004b00" stroke="#004b00" points="258.6,-156.59 248.05,-155.57 255.66,-162.94 258.6,-156.59"/>
 </g>
-<!-- node_000001e217029250 -->
+<!-- node_000001a399879250 -->
 <g id="node5" class="node">
-<title>node_000001e217029250</title>
+<title>node_000001a399879250</title>
 <path fill="#a2f8a4" stroke="#004b00" d="M349,-72.5C349,-72.5 643.5,-72.5 643.5,-72.5 649.5,-72.5 655.5,-78.5 655.5,-84.5 655.5,-84.5 655.5,-142.5 655.5,-142.5 655.5,-148.5 649.5,-154.5 643.5,-154.5 643.5,-154.5 349,-154.5 349,-154.5 343,-154.5 337,-148.5 337,-142.5 337,-142.5 337,-84.5 337,-84.5 337,-78.5 343,-72.5 349,-72.5"/>
 <text text-anchor="middle" x="496.25" y="-137.2" font-family="Times New Roman,serif" font-size="14.00">data = NO NO </text>
-<text text-anchor="middle" x="496.25" y="-120.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 000001e217029250</text>
+<text text-anchor="middle" x="496.25" y="-120.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 000001a399879250</text>
 <polyline fill="none" stroke="#004b00" points="337,-113.5 655.5,-113.5"/>
 <text text-anchor="middle" x="416.62" y="-96.2" font-family="Times New Roman,serif" font-size="14.00">L:</text>
 <text text-anchor="middle" x="416.62" y="-79.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 0000000000000000</text>
@@ -53,9 +53,9 @@
 <text text-anchor="middle" x="575.88" y="-96.2" font-family="Times New Roman,serif" font-size="14.00">R: </text>
 <text text-anchor="middle" x="575.88" y="-79.7" font-family="Times New Roman,serif" font-size="14.00"> addr: 0000000000000000</text>
 </g>
-<!-- node_000001e217029230&#45;&gt;node_000001e217029250 -->
+<!-- node_000001a3998791f0&#45;&gt;node_000001a399879250 -->
 <g id="edge3" class="edge">
-<title>node_000001e217029230&#45;&gt;node_000001e217029250</title>
+<title>node_000001a3998791f0&#45;&gt;node_000001a399879250</title>
 <path fill="none" stroke="#004b00" d="M441.16,-191.24C447.43,-182.5 454.13,-173.17 460.62,-164.12"/>
 <polygon fill="#004b00" stroke="#004b00" points="463.42,-166.23 466.41,-156.07 457.73,-162.15 463.42,-166.23"/>
 </g>
@@ -113,51 +113,51 @@
 <path fill="none" stroke="white" d="M788.91,-101.41C796.19,-86.51 797.44,-59.7 792.66,-40.71"/>
 <polygon fill="white" stroke="white" points="796.04,-39.77 789.41,-31.51 789.44,-42.1 796.04,-39.77"/>
 </g>
-<!-- node_l_null_000001e2170290d0 -->
+<!-- node_l_null_000001a399879230 -->
 <g id="node7" class="node">
-<title>node_l_null_000001e2170290d0</title>
+<title>node_l_null_000001a399879230</title>
 <ellipse fill="#a2f0f8" stroke="#007cff" cx="123.25" cy="-18" rx="27" ry="18"/>
 <text text-anchor="middle" x="123.25" y="-12.95" font-family="Times New Roman,serif" font-size="14.00">null</text>
 </g>
-<!-- node_000001e2170290d0&#45;&gt;node_l_null_000001e2170290d0 -->
+<!-- node_000001a399879230&#45;&gt;node_l_null_000001a399879230 -->
 <g id="edge6" class="edge">
-<title>node_000001e2170290d0&#45;&gt;node_l_null_000001e2170290d0</title>
+<title>node_000001a399879230&#45;&gt;node_l_null_000001a399879230</title>
 <path fill="none" stroke="#007cff" d="M143.67,-72.03C140.31,-63.31 136.84,-54.29 133.73,-46.22"/>
 <polygon fill="#007cff" stroke="#007cff" points="137.03,-45.06 130.17,-36.98 130.5,-47.57 137.03,-45.06"/>
 </g>
-<!-- node_r_null_000001e2170290d0 -->
+<!-- node_r_null_000001a399879230 -->
 <g id="node8" class="node">
-<title>node_r_null_000001e2170290d0</title>
+<title>node_r_null_000001a399879230</title>
 <ellipse fill="#a2f0f8" stroke="#007cff" cx="196.25" cy="-18" rx="27.81" ry="18"/>
 <text text-anchor="middle" x="196.25" y="-12.95" font-family="Times New Roman,serif" font-size="14.00"> null</text>
 </g>
-<!-- node_000001e2170290d0&#45;&gt;node_r_null_000001e2170290d0 -->
+<!-- node_000001a399879230&#45;&gt;node_r_null_000001a399879230 -->
 <g id="edge7" class="edge">
-<title>node_000001e2170290d0&#45;&gt;node_r_null_000001e2170290d0</title>
+<title>node_000001a399879230&#45;&gt;node_r_null_000001a399879230</title>
 <path fill="none" stroke="#007cff" d="M175.26,-72.03C178.71,-63.31 182.28,-54.29 185.48,-46.22"/>
 <polygon fill="#007cff" stroke="#007cff" points="188.71,-47.56 189.14,-36.98 182.2,-44.99 188.71,-47.56"/>
 </g>
-<!-- node_l_null_000001e217029250 -->
+<!-- node_l_null_000001a399879250 -->
 <g id="node9" class="node">
-<title>node_l_null_000001e217029250</title>
+<title>node_l_null_000001a399879250</title>
 <ellipse fill="#a2f0f8" stroke="#007cff" cx="459.25" cy="-18" rx="27" ry="18"/>
 <text text-anchor="middle" x="459.25" y="-12.95" font-family="Times New Roman,serif" font-size="14.00">null</text>
 </g>
-<!-- node_000001e217029250&#45;&gt;node_l_null_000001e217029250 -->
+<!-- node_000001a399879250&#45;&gt;node_l_null_000001a399879250 -->
 <g id="edge10" class="edge">
-<title>node_000001e217029250&#45;&gt;node_l_null_000001e217029250</title>
+<title>node_000001a399879250&#45;&gt;node_l_null_000001a399879250</title>
 <path fill="none" stroke="#007cff" d="M480.24,-72.03C476.79,-63.31 473.22,-54.29 470.02,-46.22"/>
 <polygon fill="#007cff" stroke="#007cff" points="473.3,-44.99 466.36,-36.98 466.79,-47.56 473.3,-44.99"/>
 </g>
-<!-- node_r_null_000001e217029250 -->
+<!-- node_r_null_000001a399879250 -->
 <g id="node10" class="node">
-<title>node_r_null_000001e217029250</title>
+<title>node_r_null_000001a399879250</title>
 <ellipse fill="#a2f0f8" stroke="#007cff" cx="532.25" cy="-18" rx="27.81" ry="18"/>
 <text text-anchor="middle" x="532.25" y="-12.95" font-family="Times New Roman,serif" font-size="14.00"> null</text>
 </g>
-<!-- node_000001e217029250&#45;&gt;node_r_null_000001e217029250 -->
+<!-- node_000001a399879250&#45;&gt;node_r_null_000001a399879250 -->
 <g id="edge11" class="edge">
-<title>node_000001e217029250&#45;&gt;node_r_null_000001e217029250</title>
+<title>node_000001a399879250&#45;&gt;node_r_null_000001a399879250</title>
 <path fill="none" stroke="#007cff" d="M511.83,-72.03C515.19,-63.31 518.66,-54.29 521.77,-46.22"/>
 <polygon fill="#007cff" stroke="#007cff" points="525,-47.57 525.33,-36.98 518.47,-45.06 525,-47.57"/>
 </g>

@@ -3,6 +3,7 @@
 
 extern FILE* Base_File;
 
+
 //====================================================================================================================================
 int main (int argc, char* argv[])
 {
@@ -15,7 +16,6 @@ int main (int argc, char* argv[])
     Run_akinator (node_null); 
     Dump_akin (node_null, node_null);
 
-    Base_File = Create_file (argv[1]);
     Print3 (node_null);
 
     Dtor_akin (Akin_data);
