@@ -29,7 +29,7 @@ node_akntr* Create_node (el_t data)
 //====================================================================================================================================
 FILE* Create_file (const char* name_of_file)
 {
-    FILE* file = fopen ($(name_of_file), "w+");
+    FILE* file = fopen (name_of_file, "w+"); DBGAKN($(name_of_file);)
 
     if (file == NULL)
     {
@@ -246,7 +246,6 @@ void Run_akinator (node_akntr* node)
         {
             case GUESS:
                 Guess_Akin (node);
-                DBGAKN (printf ("I am in case: GUESS\n");)
                 printf ("What do you want to do next ?\n");
                 break;
             
@@ -275,10 +274,12 @@ void Run_akinator (node_akntr* node)
 //====================================================================================================================================
 void Guess_Akin (node_akntr* node_root)
 {
+    assert (node_root);
     node_akntr* node = node_root;
     printf ("Guess any object and I will try to guess it !\n");
+    
     node_akntr* new_node = 0;
-    char* temp_str = (char*) calloc (10, sizeof (char));;
+    char* temp_str = (char*) calloc (10, sizeof (char));    
     char* object   = (char*) calloc (256, sizeof (char));
 
     while (1)
@@ -293,85 +294,18 @@ void Guess_Akin (node_akntr* node_root)
         if (action == YES)
         {
             new_node = node -> left;
-            if (!new_node)
-            {
-                printf ("I think this is \"%"TYPE"\"?\n", node -> data);
-                printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n");
-                char str[10] = "";
-
-                while (true)
-                {
-                    scanf ("%[^\n]", str);
-                    DBGAKN (printf ("str = \"%s\"", str);)
-                    getchar ();
-                    int action_ = Check_input_akin (str);
-
-                    if (action_ == NO)
-                    {
-                        printf ("Enter who it was\n");
-                        scanf ("%[^\n]", object );
-                        getchar();
-                        node -> left = Create_node (object);
-                        printf ("node = %p", node);
-                        printf ("The database has been updated !\n");
-
-                    }
-
-                    else if (action_ == YES)
-                        printf ("I guessed it! Game over!\n");
-
-                    else
-                    {
-                        printf ("Wrong input, enter [Y] or [N]\n");
-                        continue;
-                    }
-                    
-                    return;
-                }
-            }
+            if (!new_node){
+                Insert_akin (node, object, true);
+                return; }
             node = new_node;
         }
 
         else if (action == NO)
         {
             new_node = node -> right; 
-            if (!new_node)
-            {
-                printf ("I think this is \"%"TYPE"\"? Right?\n", node -> data);
-                printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n");
-                char str[10] = "";
-
-                while (true)
-                {
-                    scanf ("%[^\n]", str);
-                    DBGAKN (printf ("str = \"%s\"", str);)
-                    getchar ();
-                    int action_ = Check_input_akin (str);
-
-                    if (action_ == NO)
-                    {
-                        printf ("Enter who it was\n");
-                        scanf ("%[^\n]", object );
-                        getchar();
-                        node -> left = Create_node (object);
-                        printf ("node = %p", node);
-
-                        printf ("The database has been updated !\n");
-
-                    }
-
-                    else if (action_ == YES)
-                        printf ("I guessed it! Game over!\n");
-
-                    else
-                    {
-                        printf ("Wrong input, enter [Y] or [N]\n");
-                        continue;
-                    }
-
-                    return;
-                }
-            }
+            if (!new_node){
+                Insert_akin (node, object, false);
+                return;}
             node = new_node;
         } 
 
@@ -380,6 +314,46 @@ void Guess_Akin (node_akntr* node_root)
             printf ("Wrong input, enter [Y] or [N]\n");
             continue;
         }
+    }
+}
+//====================================================================================================================================
+void Insert_akin (node_akntr* node, char* object, bool side)
+{
+    printf ("I think this is \"%"TYPE"\"?\n", node -> data);
+    printf ("Enter [Y]/[N] - \"yes\"/\"no\"\n");
+    char str[10] = "";
+
+    while (true)
+    {
+        scanf ("%[^\n]", str);
+        DBGAKN (printf ("str = \"%s\"", str);)
+        getchar ();
+        int action_ = Check_input_akin (str);
+
+        if (action_ == NO)
+        {
+            printf ("Enter who it was\n");
+            scanf ("%[^\n]", object );
+            getchar();
+
+            if (side) node -> left  = Create_node (object);
+            else     node -> right = Create_node (object);
+
+            DBGAKN(printf ("node = %p", node);)
+            printf ("The database has been updated !\n");
+
+        }
+
+        else if (action_ == YES)
+            printf ("I guessed it! Game over!\n");
+
+        else
+        {
+            printf ("Wrong input, enter [Y] or [N]\n");
+            continue;
+        }
+        
+        return;
     }
 }
 //====================================================================================================================================
@@ -404,16 +378,16 @@ node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node
             return 0;}  
         else
         {
-            char* quote_pos     = strchr (onegin -> buffer_addr, '\"');         //addr '" Qvadrober' 
+            char* quote_pos     = strchr (onegin -> buffer_addr, '\"');        
             char* quote_pos_end = strchr (quote_pos + 1, '\"');
             
-            *quote_pos_end = '\0';                                         //'..er \0'
+            *quote_pos_end = '\0';                                        
             DBGAKN (printf ("%c\n",  *(quote_pos_end - 1));
                     $(*quote_pos) ;)
 
             node_akntr* node = Create_node (quote_pos + 1);
             DBGAKN (fprintf (Log_File, "Я добавил узел: %s\n", quote_pos + 1);
-            fprintf (Log_File, "Его адрес: %p\n", node);)
+            DBGAKN(fprintf (Log_File, "Его адрес: %p\n", node);))
             ++counter;
 
             onegin -> buffer_addr = quote_pos_end + 1;
@@ -425,7 +399,7 @@ node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node
             }
 
             if (counter == 1) {*node_root = node; fprintf (Log_File, "Тут должен быть один вызов\n");}   
-            $(counter);
+            DBGAKN($(counter);)
 
             node -> left  = Read3 (onegin, name_base_file, node_root);
             node -> right = Read3 (onegin, name_base_file, node_root);
@@ -480,9 +454,9 @@ void Print_tab (size_t cnt, FILE* file_ptr)
 void Free_akin (akinator* Akin_data)
 {
     assert (Akin_data);
-    printf ("Akin_data -> root_node = %p\n", Akin_data -> root_node   );
+    DBGAKN(printf ("Akin_data -> root_node = %p\n", Akin_data -> root_node   );
     printf ("*(Akin_data -> root_node) = %p\n", *(Akin_data -> root_node));
-    printf ("Akin_data -> root_node[0] = %p\n", Akin_data -> root_node[0]);
+    printf ("Akin_data -> root_node[0] = %p\n", Akin_data -> root_node[0]);)
 
     free (Akin_data -> onegin_data);
     free (Akin_data);

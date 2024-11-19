@@ -1,6 +1,6 @@
 #pragma once
 
-#define DEBUG 1
+#define DEBUG 0 
 
 #if  (DEBUG == 1) 
     #define DBGAKN( ... ) __VA_ARGS__
@@ -37,6 +37,7 @@ int Dump_akin (node_akntr* node, node_akntr* new_node);
 void Insert (node_akntr* node, el_t value);
 void Run_akinator (node_akntr* node);
 void Guess_Akin (node_akntr* node);
+void Insert_akin (node_akntr* node, char* object, bool side);
 node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node_root);
 char* Skip_space (const char* ptr);
 node_akntr* Print3 (node_akntr* node);

@@ -24,8 +24,8 @@ akinator* Akin_init (int argc, char* argv[])
     node_akntr* node_root = (node_akntr*) calloc (1, sizeof (node_akntr));
     if (!node_root) { fprintf (Log_File, "ERROR IN AKIN INIT: akin_data = null\n"); return 0; }
 
-    printf ("node_root = %p\n", node_root);
-    printf ("&node_root = %p\n", &node_root);
+    DBGAKN(printf ("node_root = %p\n", node_root);)
+    DBGAKN(printf ("&node_root = %p\n", &node_root);)
 
 
     Check_argc (argc);
@@ -38,12 +38,10 @@ akinator* Akin_init (int argc, char* argv[])
     akin_data -> onegin_data = onegin_data;
     akin_data -> root_node = &node_root;
     
-    printf ("akin_data -> onegin_data = %p\n", akin_data -> onegin_data);
+    DBGAKN(printf ("akin_data -> onegin_data = %p\n", akin_data -> onegin_data);
     printf ("akin_data -> root_node = %p\n", akin_data -> root_node);
     printf ("akin_data -> root_node = %p\n", akin_data -> root_node[0]);
-    printf ("*(akin_data -> root_node) = %p\n", *(akin_data -> root_node));
-
-
+    printf ("*(akin_data -> root_node) = %p\n", *(akin_data -> root_node));)
 
     return akin_data;
 }
