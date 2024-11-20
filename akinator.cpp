@@ -307,7 +307,7 @@ void Guess_Akin (node_akntr* node_root)
                 if (node->left) {DBGAKN( fprintf (Log_File, "Error in Guess_Akin() line%d: wrong base", __LINE__);) fflush (Log_File); return; }
                 Insert_akin (old_node, node, object, temp_str, left);
                 node_akntr* node__ = node_root;
-                Print3 (node__);
+                //Print3 (node__);
                 return;}
             old_node = node; 
             node = node -> right;
@@ -559,4 +559,3 @@ void Path_obtainig (node_akntr* node_root)
 
     return;
 }
-

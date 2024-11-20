@@ -1,0 +1,16 @@
+{ "Akinator"
+	{ "YES_YES"
+		{}
+		{}
+	}
+	{ "robit"
+		{ "bro"
+			{}
+			{}
+		}
+		{ "YES_YES"
+			{}
+			{}
+		}
+	}
+}
