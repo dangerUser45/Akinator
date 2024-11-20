@@ -4637,3 +4637,77 @@ Run file:	D:\GitHub\Akinator\akin.exe
 Directory:	D:\GitHub\Akinator
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF6F0222BE0 в функции Definition_Akin(). Попытка прочесть данные по адресу NULL в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6F03974C8 (64-bit), Flags: Cmdre0, Thread: 0x97C (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6F0222BE0 in D:\GitHub\Akinator\akin.exe: Definition_Akin()
+# 1 0x00007FF6F0221D1C in D:\GitHub\Akinator\akin.exe: Run_akinator()
+# 2 0x00007FF6F0222D72 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 20 2024 00:45:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 20 2024 03:46:27
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Akinator\akin.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF6F0222BE0 в функции Definition_Akin(). Попытка прочесть данные по адресу NULL в модуле D:\GitHub\Akinator\akin.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6F03974C8 (64-bit), Flags: Cmdre0, Thread: 0x97C (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6F0222BE0 in D:\GitHub\Akinator\akin.exe: Definition_Akin()
+# 1 0x00007FF6F0221D1C in D:\GitHub\Akinator\akin.exe: Run_akinator()
+# 2 0x00007FF6F0222D72 in D:\GitHub\Akinator\akin.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov 20 2024 00:45:49, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 20 2024 03:46:27
+
+Run file:	D:\GitHub\Akinator\akin.exe
+Directory:	D:\GitHub\Akinator
+
+--------------------------------------------------

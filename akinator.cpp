@@ -21,9 +21,6 @@ node_akntr* Create_node (el_t data)
 {
     node_akntr* new_node = (node_akntr*) calloc (1, sizeof (node_akntr));
     if (!new_node) {fprintf (Log_File, "Error!"); assert (new_node);}
-
-    
-
     new_node -> data = data;
 
     return new_node;
@@ -182,11 +179,6 @@ int Dump_akin (node_akntr* node, node_akntr* new_node)
     fprintf (Log_File ,"\n<img src = \"Picture_tree/%s\" width = %d%%>\n\n\n\n\n\n\n\n\n\n", name_pic, SCALE);
     fflush (Graph_File);
     ++number_pic;
-
-    //fprintf (Log_File, "<b><font color = #b2b2b2><font size = \"7\"> _______________________________________________________________________________________________________________________________________________________________________\n</font size></font></b>");
-    //fprintf (Log_File, "<b><font color = #8080ff><font size = \"3\"> /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\n</font size></font></b>");
-    //fprintf (Log_File, "<b><font color = #b2b2b2><font size = \"7\"> ________________________________________________________________________________________________________________________________________________________________________\n</font size></font></b>");
-
     
     free (name_cmd);
     free (name_pic);
@@ -224,7 +216,7 @@ void Insert (node_akntr* node, el_t value)
     }
 }
 //====================================================================================================================================
-void Run_akinator (node_akntr* node)
+void Run_akinator (akinator* akin,  node_akntr* node)
 {
     if (!node) return;
 
@@ -257,7 +249,7 @@ void Run_akinator (node_akntr* node)
                 break;
 
             case DEFINITION:
-                //Definition_Akin ();
+                Definition_Akin (akin);
                 printf ("What do you want to do next ?\n");
                 break;
 
@@ -380,10 +372,12 @@ void Insert_akin (node_akntr* old_node, node_akntr* node, char* object, char* te
     }
 }
 //====================================================================================================================================
-node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node_root)
+node_akntr* Read3 (akinator* akin, const char* name_base_file, node_akntr** node_root)
 {
-    assert (onegin);
+    assert (akin);
     assert (name_base_file);
+
+    ONEGIN* onegin = akin -> onegin_data;
     static size_t counter = 0;
 
     fprintf (Log_File, "onegin -> buffer_addr[0] = %s\n", onegin -> buffer_addr);
@@ -409,7 +403,9 @@ node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node
                     $(*quote_pos) ;)
 
             node_akntr* node = Create_node (quote_pos + 1);
-
+            akin -> list_array[0].node = node;
+            akin -> n_lists += 1;
+           
             DBGAKN (fprintf (Log_File, "Я добавил узел: %s\n", quote_pos + 1);
             DBGAKN(fprintf (Log_File, "Его адрес: %p\n", node);))
             ++counter;
@@ -425,8 +421,8 @@ node_akntr* Read3 (ONEGIN* onegin, const char* name_base_file, node_akntr** node
             if (counter == 1) {*node_root = node; fprintf (Log_File, "Тут должен быть один вызов\n");}   
             DBGAKN($(counter);)
 
-            node -> left  = Read3 (onegin, name_base_file, node_root);
-            node -> right = Read3 (onegin, name_base_file, node_root);
+            node -> left  = Read3 (akin, name_base_file, node_root);
+            node -> right = Read3 (akin, name_base_file, node_root);
 
             return node;
             
@@ -534,12 +530,33 @@ int My_Strcmp (const char* first_string, const char* second_string)
 
 }
 //====================================================================================================================================
-void Definition_akin (node_akntr* node)
+void Definition_Akin (akinator* akin)
 {
-    assert (node);
-    printf ("Name the object that needs to be defined\n");
+    assert (akin);
     printf ("Here's a list of all the facilities:");
-    printf ("  ");
 
+    for (size_t i = 0; i < akin -> n_lists; ++i)
+        printf ("%zu) \"%s\"\n", i+1,akin -> list_array[i].node -> data);
+
+    printf ("Name the object that needs to be defined\n");
+
+    char* temp_str = (char*) calloc (256, sizeof (char));
+    scanf ("%[^\n]", temp_str); getchar ();
+
+    while (true)
+    {
+        scanf ("%[^\n]", temp_str); getchar ();
+
+        for (size_t i = 0; i < akin -> n_lists; ++i)
+            if (!strcmp (akin -> list_array[i].node -> data, temp_str))
+               { Path_obtainig (akin -> list_array[i].node); return;}
+            else {printf ("Incorrect input ! Try again\n");  continue;}
+    }
+}
+//====================================================================================================================================
+void Path_obtainig (node_akntr* node_root)
+{
+
+    return;
 }
 

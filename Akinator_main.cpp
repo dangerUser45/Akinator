@@ -10,10 +10,10 @@ int main (int argc, char* argv[])
     akinator* Akin_data = Akin_init (argc, argv);
     node_akntr* node_null = *(Akin_data -> root_node);
 
-    Read3 (Akin_data -> onegin_data, argv[1], &node_null);
+    Read3 (Akin_data, argv[1], &node_null);
     Dump_akin (node_null, node_null);
 
-    Run_akinator (node_null); 
+    Run_akinator (Akin_data, node_null);
     Dump_akin (node_null, node_null);
 
     Print3 (node_null);

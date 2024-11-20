@@ -4,49 +4,49 @@ digraph
 	node [ color = "#004b00", shape = "rectangle", style = "filled", fillcolor = "#a2f8a4"];
 	edge [ color = "#004b00", fontsize = 16];
 
-	node_000001a3998791f0 [ shape = "Mrecord", label = "{ data = Akinator \n addr: 000001a3998791f0 | { L:\n addr: 000001a399879230 | R: \n addr: 000001a3998792d0 } }" ];
+	node_00000298495591d0 [ shape = "Mrecord", label = "{ data = Akinator \n addr: 00000298495591d0 | { L:\n addr: 0000029849559190 | R: \n addr: 00000298495590b0 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"1" ->  "2";
 	}
 
-	{ rank = 1; "1"; "node_000001a3998791f0" }
+	{ rank = 1; "1"; "node_00000298495591d0" }
 
-	node_000001a399879230[ shape = "Mrecord", label = "{ data = YES_YES\n addr: 000001a399879230 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
-	node_000001a3998791f0  -> node_000001a399879230;
+	node_0000029849559190[ shape = "Mrecord", label = "{ data = YES_YES\n addr: 0000029849559190 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
+	node_00000298495591d0  -> node_0000029849559190;
 
-	node_000001a3998792d0 [ shape = "Mrecord", label = " { data = wefd\n addr: 000001a3998792d0 | { L:\n addr: 000001a399879290 | R: \n addr: 000001a399879250 } }" ];
-	node_000001a3998791f0  -> node_000001a3998792d0;
+	node_00000298495590b0 [ shape = "Mrecord", label = " { data = wefd\n addr: 00000298495590b0 | { L:\n addr: 00000298495590d0 | R: \n addr: 00000298495591b0 } }" ];
+	node_00000298495591d0  -> node_00000298495590b0;
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
 		edge[ color = "white"]
 		"1" ->  "2";
 	}
 
-	node_000001a399879230 [ shape = "Mrecord", label = "{ data = YES_YES \n addr: 000001a399879230 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	node_0000029849559190 [ shape = "Mrecord", label = "{ data = YES_YES \n addr: 0000029849559190 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"2" ->  "3";
 	}
 
-	{ rank = 2; "2"; "node_000001a399879230" }
+	{ rank = 2; "2"; "node_0000029849559190" }
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_l_null_000001a399879230[ shape = "ellipse", label = "null" ];
-		node_000001a399879230  -> node_l_null_000001a399879230;
+		node_l_null_0000029849559190[ shape = "ellipse", label = "null" ];
+		node_0000029849559190  -> node_l_null_0000029849559190;
 	}
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_r_null_000001a399879230 [shape = "ellipse", label = " null" ];
-		node_000001a399879230  -> node_r_null_000001a399879230;
+		node_r_null_0000029849559190 [shape = "ellipse", label = " null" ];
+		node_0000029849559190  -> node_r_null_0000029849559190;
 	}
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
@@ -54,49 +54,49 @@ digraph
 		"2" ->  "3";
 	}
 
-	node_000001a3998792d0 [ shape = "Mrecord", label = "{ data = wefd \n addr: 000001a3998792d0 | { L:\n addr: 000001a399879290 | R: \n addr: 000001a399879250 } }" ];
+	node_00000298495590b0 [ shape = "Mrecord", label = "{ data = wefd \n addr: 00000298495590b0 | { L:\n addr: 00000298495590d0 | R: \n addr: 00000298495591b0 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"2" ->  "3";
 	}
 
-	{ rank = 2; "2"; "node_000001a3998792d0" }
+	{ rank = 2; "2"; "node_00000298495590b0" }
 
-	node_000001a399879290[ shape = "Mrecord", label = "{ data = tref\n addr: 000001a399879290 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
-	node_000001a3998792d0  -> node_000001a399879290;
+	node_00000298495590d0[ shape = "Mrecord", label = "{ data = tref\n addr: 00000298495590d0 | { L:\n addr: 0000000000000000 |   R: \n addr: 0000000000000000 } }" ];
+	node_00000298495590b0  -> node_00000298495590d0;
 
-	node_000001a399879250 [ shape = "Mrecord", label = " { data = NO NO\n addr: 000001a399879250 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
-	node_000001a3998792d0  -> node_000001a399879250;
+	node_00000298495591b0 [ shape = "Mrecord", label = " { data = NO NO\n addr: 00000298495591b0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	node_00000298495590b0  -> node_00000298495591b0;
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
 		edge[ color = "white"]
 		"2" ->  "3";
 	}
 
-	node_000001a399879290 [ shape = "Mrecord", label = "{ data = tref \n addr: 000001a399879290 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	node_00000298495590d0 [ shape = "Mrecord", label = "{ data = tref \n addr: 00000298495590d0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"3" ->  "4";
 	}
 
-	{ rank = 3; "3"; "node_000001a399879290" }
+	{ rank = 3; "3"; "node_00000298495590d0" }
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_l_null_000001a399879290[ shape = "ellipse", label = "null" ];
-		node_000001a399879290  -> node_l_null_000001a399879290;
+		node_l_null_00000298495590d0[ shape = "ellipse", label = "null" ];
+		node_00000298495590d0  -> node_l_null_00000298495590d0;
 	}
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_r_null_000001a399879290 [shape = "ellipse", label = " null" ];
-		node_000001a399879290  -> node_r_null_000001a399879290;
+		node_r_null_00000298495590d0 [shape = "ellipse", label = " null" ];
+		node_00000298495590d0  -> node_r_null_00000298495590d0;
 	}
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
@@ -104,29 +104,29 @@ digraph
 		"3" ->  "4";
 	}
 
-	node_000001a399879250 [ shape = "Mrecord", label = "{ data = NO NO \n addr: 000001a399879250 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
+	node_00000298495591b0 [ shape = "Mrecord", label = "{ data = NO NO \n addr: 00000298495591b0 | { L:\n addr: 0000000000000000 | R: \n addr: 0000000000000000 } }" ];
 	{
 		node[ color = "#58184PE", shape = "circle", style = "filled" ,fillcolor="#fe5656"];
 		edge[ color = "white"]
 		"3" ->  "4";
 	}
 
-	{ rank = 3; "3"; "node_000001a399879250" }
+	{ rank = 3; "3"; "node_00000298495591b0" }
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_l_null_000001a399879250[ shape = "ellipse", label = "null" ];
-		node_000001a399879250  -> node_l_null_000001a399879250;
+		node_l_null_00000298495591b0[ shape = "ellipse", label = "null" ];
+		node_00000298495591b0  -> node_l_null_00000298495591b0;
 	}
 
 	{
 		node [ color = "#007cff", shape = "rectangle", style = "filled", fillcolor = "#a2f0f8"];
 		edge [ color = "#007cff", fontsize = 16];
 
-		node_r_null_000001a399879250 [shape = "ellipse", label = " null" ];
-		node_000001a399879250  -> node_r_null_000001a399879250;
+		node_r_null_00000298495591b0 [shape = "ellipse", label = " null" ];
+		node_00000298495591b0  -> node_r_null_00000298495591b0;
 	}
 	{
 		node[ shape = "plaintext", style = "filled" ,fillcolor="white"];
@@ -135,5 +135,5 @@ digraph
 	}
 
 
-	node_000001a3998791f0 [ fillcolor = "#ffa615"];
+	node_00000298495591d0 [ fillcolor = "#ffa615"];
 }
