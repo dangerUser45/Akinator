@@ -1,6 +1,6 @@
 #pragma once
 
-#define DEBUG 0
+#define DEBUG 1
 
 #if  (DEBUG == 1) 
     #define DBGAKN( ... ) __VA_ARGS__
