@@ -173,7 +173,7 @@ int Dump_akin (node_akntr* node, node_akntr* new_node)
     Close_File (Graph_File);
     Close_File (Graph_File_Utf8);
 
-    system ("D:/Приложения/iconv/gettext-iconv/bin/iconv.exe -f CP1251 -t UTF-8 Dot.txt > Dot_UTF-8.txt");
+    system ("D:\\Приложения\\iconv\\gettext-iconv\\bin\\iconv.exe -f CP1251 -t UTF-8 Dot.txt > Dot_UTF-8.txt");
     system (name_cmd);
 
     fprintf (Log_File ,"\n<img src = \"Picture_tree/%s\" width = %d%%>\n\n\n\n\n\n\n\n\n\n", name_pic, SCALE);
@@ -391,7 +391,7 @@ node_akntr* Read3 (akinator* akin, const char* name_base_file, node_akntr** node
         if (*onegin -> buffer_addr != '\"')
         { 
             onegin -> buffer_addr = strchr (onegin -> buffer_addr, '{');
-            DBGAKN (fprintf (Log_File, "Я скипнулся, onegin -> buffer_addr = &lt;%.20s&gt;\n", onegin -> buffer_addr);)
+            DBGAKN (fprintf (Log_File, "пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, onegin -> buffer_addr = &lt;%.20s&gt;\n", onegin -> buffer_addr);)
             return 0;}  
         else
         {
@@ -406,8 +406,8 @@ node_akntr* Read3 (akinator* akin, const char* name_base_file, node_akntr** node
             akin -> list_array[0].node = node;
             akin -> n_lists += 1;
            
-            DBGAKN (fprintf (Log_File, "Я добавил узел: %s\n", quote_pos + 1);
-            DBGAKN(fprintf (Log_File, "Его адрес: %p\n", node);))
+            DBGAKN (fprintf (Log_File, "пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ: %s\n", quote_pos + 1);
+            DBGAKN(fprintf (Log_File, "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: %p\n", node);))
             ++counter;
 
             onegin -> buffer_addr = quote_pos_end + 1;
@@ -418,7 +418,7 @@ node_akntr* Read3 (akinator* akin, const char* name_base_file, node_akntr** node
                 return node;
             }    
 
-            if (counter == 1) {*node_root = node; fprintf (Log_File, "Тут должен быть один вызов\n");}   
+            if (counter == 1) {*node_root = node; fprintf (Log_File, "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ\n");}   
             DBGAKN($(counter);)
 
             node -> left  = Read3 (akin, name_base_file, node_root);

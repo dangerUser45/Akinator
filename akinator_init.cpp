@@ -10,6 +10,8 @@ FILE* Graph_File;
 FILE* Graph_File_Utf8;
 FILE* Base_File;
 
+
+
 akinator* Akin_init (int argc, char* argv[])
 {
     Log_File = Create_file ("LOG_AKINATOR.html");        //!!!    
@@ -39,7 +41,7 @@ akinator* Akin_init (int argc, char* argv[])
     Read_File (onegin_data); 
     DBG_Print (onegin_data);
 
-    Base_File = Create_file (argv[1]);
+    //Base_File = Create_file (argv[1]);!!!
 
     akin_data -> onegin_data = onegin_data;
     akin_data -> root_node   = &node_root;

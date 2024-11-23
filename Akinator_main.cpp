@@ -16,6 +16,7 @@ int main (int argc, char* argv[])
     Run_akinator (Akin_data, node_null);
     Dump_akin (node_null, node_null);
 
+    Base_File = Create_file (argv[1]);
     Print3 (node_null);
 
     Dtor_akin (Akin_data);
